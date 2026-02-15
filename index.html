@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baniya Buddhi</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================
+     TOP CURVED BUNTING
+========================= -->
+<div class="bunting-wrapper">
+
+    <svg class="rope" viewBox="0 0 1000 200" preserveAspectRatio="none">
+        <path d="M0,10 Q500,170 1000,10" />
+    </svg>
+
+    <div class="flags">
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+        <div class="flag"></div>
+    </div>
+
+</div>
+
+<!-- Main Content -->
+<div class="container">
+
+    <div class="top-row">
+        <img src="baniya_logo.png" alt="Baniya Buddhi Logo">
+        <img src="startup_club_logo.png" alt="Startup Club Logo">
+    </div>
+
+    <div class="presents">presents</div>
+
+    <div class="title">BANIYA BUDDHI™</div>
+
+    <div class="subtitle">The wisdom of making profits</div>
+
+</div>
+
+<script>
+function positionFlags() {
+    const svg = document.querySelector(".rope");
+    const path = svg.querySelector("path");
+    const flags = document.querySelectorAll(".flag");
+
+    const pathLength = path.getTotalLength();
+    const flagCount = flags.length;
+
+    const svgRect = svg.getBoundingClientRect();
+    const scaleX = svgRect.width / 1000;
+    const scaleY = svgRect.height / 200;
+
+    flags.forEach((flag, index) => {
+        const point = path.getPointAtLength(
+            (pathLength / (flagCount - 1)) * index
+        );
+
+        flag.style.left = `${(point.x * scaleX) - 24}px`;
+        flag.style.top = `${(point.y * scaleY)}px`;
+
+        flag.style.transform = `rotate(${index % 2 === 0 ? -6 : 6}deg)`;
+    });
+}
+
+window.addEventListener("load", positionFlags);
+window.addEventListener("resize", positionFlags);
+</script>
+
+</body>
+</html>
