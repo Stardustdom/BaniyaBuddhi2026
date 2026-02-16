@@ -113,16 +113,79 @@ body::before {
 .flag:nth-child(3n+2) { background: #ffb347; }
 .flag:nth-child(3n)   { background: #ff5c8a; }
 
-/* Smaller Flags on Small Screens */
-@media (max-width: 480px) {
+/* Large tablets and small desktops */
+@media (max-width: 992px) {
     .flag {
-        width: 30px;
-        height: 45px;
-        clip-path: path("M0 0 H30 V38 Q22 48 15 34 Q8 48 0 38 Z");
+        width: 42px;
+        height: 57px;
+        clip-path: path("M0 0 H42 V50 Q31 61 21 45 Q11 61 0 50 Z");
+    }
+
+    .bunting-wrapper {
+        height: 200px;
+    }
+    
+    .rope {
+        height: 190px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .flag {
+        width: 36px;
+        height: 50px;
+        clip-path: path("M0 0 H36 V43 Q27 53 18 38 Q9 53 0 43 Z");
+    }
+
+    .bunting-wrapper {
+        height: 185px;
+    }
+    
+    .rope {
+        height: 175px;
+    }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 600px) {
+    .flag {
+        width: 32px;
+        height: 44px;
+        clip-path: path("M0 0 H32 V37 Q24 46 16 33 Q8 46 0 37 Z");
     }
 
     .bunting-wrapper {
         height: 170px;
+    }
+    
+    .rope {
+        height: 160px;
+    }
+    
+    .rope path {
+        stroke-width: 7;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    .flag {
+        width: 26px;
+        height: 38px;
+        clip-path: path("M0 0 H26 V32 Q19.5 40 13 28 Q6.5 40 0 32 Z");
+    }
+
+    .bunting-wrapper {
+        height: 155px;
+    }
+    
+    .rope {
+        height: 145px;
+    }
+    
+    .rope path {
+        stroke-width: 6;
     }
 }
 
@@ -137,11 +200,31 @@ body::before {
     padding: 40px 20px;
 }
 
+/* Better spacing on tablets */
+@media (max-width: 992px) {
+    .container {
+        margin: 185px auto 50px auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 170px auto 45px auto;
+    }
+}
+
 /* Better spacing on mobile */
 @media (max-width: 600px) {
     .container {
-        margin: 170px auto 40px auto;
+        margin: 160px auto 40px auto;
         padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 150px auto 35px auto;
+        padding: 15px;
     }
 }
 

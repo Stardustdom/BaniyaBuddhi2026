@@ -19,7 +19,7 @@
 <div class="bunting-wrapper">
 
     <svg class="rope" viewBox="0 0 1000 200" preserveAspectRatio="none">
-        <path d="M0,10 Q500,170 1000,10" />
+        <path d="M0,15 Q500,155 1000,15" />
         
     </svg>
 
@@ -68,14 +68,38 @@ function positionFlags() {
     const svgRect = svg.getBoundingClientRect();
     const scaleX = svgRect.width / 1000;
     const scaleY = svgRect.height / 200;
+    
+    // Adjust offset based on screen size
+    const width = window.innerWidth;
+    let offsetX = 24;
+    let offsetY = 15;
+    
+    if (width <= 480) {
+        offsetX = 14;
+        offsetY = 12;
+    } else if (width <= 600) {
+        offsetX = 16;
+        offsetY = 12;
+    } else if (width <= 768) {
+        offsetX = 19;
+        offsetY = 13;
+    } else if (width <= 992) {
+        offsetX = 21;
+        offsetY = 14;
+    }
+
+    // padding to avoid edge clustering
+    const startPadding = 0.05; // 5% from start
+    const endPadding = 0.05;   // 5% from end
+    const usableLength = pathLength * (1 - startPadding - endPadding);
 
     flags.forEach((flag, index) => {
-        const point = path.getPointAtLength(
-            (pathLength / (flagCount - 1)) * index
-        );
+        const t = index / (flagCount - 1);
+        const distance = pathLength * startPadding + (usableLength * t);
+        const point = path.getPointAtLength(distance);
 
-        flag.style.left = `${(point.x * scaleX) - 24}px`;
-        flag.style.top = `${(point.y * scaleY)-15}px`;
+        flag.style.left = `${(point.x * scaleX) - offsetX}px`;
+        flag.style.top = `${(point.y * scaleY) - offsetY}px`;
 
         const baseTilt = index % 2 === 0 ? -6 : 6;
         flag.style.setProperty('--base-tilt', baseTilt + 'deg');
@@ -85,9 +109,12 @@ function positionFlags() {
 function getFlagCount() {
     const width = window.innerWidth;
 
-    if (width > 1200) return 23;
-    if (width > 768) return 18;
-    if (width > 480) return 12;
+    if (width > 1400) return 20;
+    if (width > 1200) return 17;
+    if (width > 992) return 14;
+    if (width > 768) return 11;
+    if (width > 600) return 12;
+    if (width > 480) return 10;
     return 8; // small mobile
 }
 
@@ -99,16 +126,9 @@ function initFlags() {
 window.addEventListener("load", initFlags);
 
 window.addEventListener("resize", () => {
-    createFlags(getFlagCount());
-    positionFlags();
+    clearTimeout(window.resizeTimer);
+    window.resizeTimer = setTimeout(initFlags, 100);
 });
-
-window.addEventListener("load", () => {
-    createFlags(23);   // 🔥 CHANGE THIS NUMBER for more/less flags
-    positionFlags();
-});
-
-window.addEventListener("resize", positionFlags);
 
 </script>
 
