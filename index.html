@@ -20,21 +20,12 @@
 
     <svg class="rope" viewBox="0 0 1000 200" preserveAspectRatio="none">
         <path d="M0,10 Q500,170 1000,10" />
+        
     </svg>
 
     <div class="flags">
         <div class="flag"></div>
-        <div class="flag"></div>
-        <div class="flag"></div>
-        <div class="flag"></div>
-        <div class="flag"></div>
-        <div class="flag"></div>
-        <div class="flag"></div>
-        <div class="flag"></div>
-        <div class="flag"></div>
-        <div class="flag"></div>
-        <div class="flag"></div>
-    </div>
+ 
 
 </div>
 
@@ -42,19 +33,30 @@
 <div class="container">
 
     <div class="top-row">
-        <img src="baniya_logo.png" alt="Baniya Buddhi Logo">
-        <img src="startup_club_logo.png" alt="Startup Club Logo">
+        <img src="baniya_logo.png" alt="Baniya Buddhi Logo" class="baniya-logo">
+        <img src="startup_club_logo.png" alt="Startup Club Logo" class="startup-logo">
     </div>
 
     <div class="presents">presents</div>
 
-    <div class="title">BANIYA BUDDHI™</div>
+    <div class="title">BANIYA BUDDHI<sup>™</sup></div>
 
     <div class="subtitle">The wisdom of making profits</div>
 
 </div>
 
 <script>
+    function createFlags(count) {
+    const container = document.querySelector(".flags");
+    container.innerHTML = "";
+
+    for (let i = 0; i < count; i++) {
+        const flag = document.createElement("div");
+        flag.classList.add("flag");
+        container.appendChild(flag);
+    }
+}
+
 function positionFlags() {
     const svg = document.querySelector(".rope");
     const path = svg.querySelector("path");
@@ -73,14 +75,41 @@ function positionFlags() {
         );
 
         flag.style.left = `${(point.x * scaleX) - 24}px`;
-        flag.style.top = `${(point.y * scaleY)}px`;
+        flag.style.top = `${(point.y * scaleY)-15}px`;
 
-        flag.style.transform = `rotate(${index % 2 === 0 ? -6 : 6}deg)`;
+        const baseTilt = index % 2 === 0 ? -6 : 6;
+        flag.style.setProperty('--base-tilt', baseTilt + 'deg');
+        flag.style.animationDelay = `${index * 0.15}s`;
     });
 }
+function getFlagCount() {
+    const width = window.innerWidth;
 
-window.addEventListener("load", positionFlags);
+    if (width > 1200) return 23;
+    if (width > 768) return 18;
+    if (width > 480) return 12;
+    return 8; // small mobile
+}
+
+function initFlags() {
+    createFlags(getFlagCount());
+    positionFlags();
+}
+
+window.addEventListener("load", initFlags);
+
+window.addEventListener("resize", () => {
+    createFlags(getFlagCount());
+    positionFlags();
+});
+
+window.addEventListener("load", () => {
+    createFlags(23);   // 🔥 CHANGE THIS NUMBER for more/less flags
+    positionFlags();
+});
+
 window.addEventListener("resize", positionFlags);
+
 </script>
 
 </body>
