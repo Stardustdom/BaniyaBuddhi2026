@@ -4,113 +4,133 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baniya Buddhi</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-</head>
-
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet"></head>
 <body>
 
-<!-- =========================
-     TOP CURVED BUNTING
-========================= -->
-<div class="bunting-wrapper">
+<!-- INTRO VIDEO -->
+<video id="introVideo" autoplay muted>
+    <source id="videoSource" src="">
+</video>
 
-    <svg class="rope" viewBox="0 0 1000 200" preserveAspectRatio="none">
-        <path d="M0,10 Q500,170 1000,10" />
+<!-- MAIN CONTENT -->
+<div id="mainContent">
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">BANIYA BUDDHI™</div>
+
+        <div class="nav-links">
+            <a href="#index">Home</a>
+            <a href="https://drive.google.com/file/d/1G2ro7_RCuzvX7s6OygCRDyKlQmyw5fT-/view?usp=sharing">Rules</a>
+            <a href="https://drive.google.com/file/d/1dac7BzRK_RjNdUtNrDJcQDiYEnIwfqU3/view?usp=sharing">Tech Elements</a>
+            <a href="organizers.html">Organizers</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0tjoJkDRoZMtCf9zNxbNLZfVv0FtWHmqHaf1Al0L_0g3F4Q/viewform" target="_blank" class="register-btn">
+                Register Now
+            </a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div><div></div><div></div>
+        </div>
+    </nav>
+
+    <!-- SIDE MENU (Mobile) -->
+    <div class="side-menu" id="sideMenu">
+        <a href="#index">Home</a>
+        <a href="https://drive.google.com/file/d/1G2ro7_RCuzvX7s6OygCRDyKlQmyw5fT-/view?usp=sharing">Rules</a>
+        <a href="https://drive.google.com/file/d/1dac7BzRK_RjNdUtNrDJcQDiYEnIwfqU3/view?usp=sharing">Tech Elements</a>
+        <a href="organizers.html">Organizers</a>
         
-    </svg>
-
-    <div class="flags">
-        <div class="flag"></div>
- 
-
-</div>
-
-<!-- Main Content -->
-<div class="container">
-
-    <div class="top-row">
-        <img src="baniya_logo.png" alt="Baniya Buddhi Logo" class="baniya-logo">
-        <img src="startup_club_logo.png" alt="Startup Club Logo" class="startup-logo">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0tjoJkDRoZMtCf9zNxbNLZfVv0FtWHmqHaf1Al0L_0g3F4Q/viewform" target="_blank" class="register-btn">
+                Register Now
+            </a>
     </div>
 
-    <div class="presents">presents</div>
-
-    <div class="title">BANIYA BUDDHI<sup>™</sup></div>
-
-    <div class="subtitle">The wisdom of making profits</div>
+    <!-- HERO -->
+    <section class="hero">
+       
+      
+    </section>
 
 </div>
+<footer class="footer">
 
+    <div class="footer-container">
+
+        <!-- Brand Column -->
+        <div class="footer-col">
+            <div class="footer-brand">
+                <img src="assets/logo.png" alt="Baniya Buddhi Logo" class="footer-logo">
+                <h2 class="footer-title">Baniya Buddhi<sup>™</sup></h2>
+            </div>
+            <p class="footer-tagline">
+                The wisdom of making profits.
+            </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+            <h3>Quick Links</h3>
+           <ul class="footer-links">
+    <li><a href="index.html">Home</a></li>
+
+    <li>
+        <a href="https://drive.google.com/file/d/1G2ro7_RCuzvX7s6OygCRDyKlQmyw5fT-/view?usp=sharing" target="_blank">
+            Rules
+        </a>
+    </li>
+
+    <li>
+        <a href="https://drive.google.com/file/d/1dac7BzRK_RjNdUtNrDJcQDiYEnIwfqU3/view?usp=sharing" target="_blank">
+            Tech Elements
+        </a>
+    </li>
+
+    <li><a href="organizers.html">Organizers</a></li>
+
+    <li>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0tjoJkDRoZMtCf9zNxbNLZfVv0FtWHmqHaf1Al0L_0g3F4Q/viewform"
+           target="_blank">
+            Register Now
+        </a>
+    </li>
+</ul>
+        </div>
+
+        <!-- Venue -->
+        <div class="footer-col">
+            <h3>Venue</h3>
+            <p class="footer-venue">
+                MCKV Institute of Engineering<br>
+                243 G.T. Road (N), Liluah<br>
+                Howrah - 711204, WB
+            </p>
+
+            <div class="footer-socials">
+                <a href="https://www.instagram.com/thestartupclubbymckvie/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://chat.whatsapp.com/FNvUryl6f2nHIKf0wciKsg" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 Baniya Buddhi. All Rights Reserved.</p>
+        <span>Designed for Innovation</span>
+    </div>
+
+</footer>
+<script src="js/main.js"></script>
 <script>
-    function createFlags(count) {
-    const container = document.querySelector(".flags");
-    container.innerHTML = "";
-
-    for (let i = 0; i < count; i++) {
-        const flag = document.createElement("div");
-        flag.classList.add("flag");
-        container.appendChild(flag);
-    }
+function toggleMenu() {
+    document.getElementById("sideMenu").classList.toggle("active");
 }
-
-function positionFlags() {
-    const svg = document.querySelector(".rope");
-    const path = svg.querySelector("path");
-    const flags = document.querySelectorAll(".flag");
-
-    const pathLength = path.getTotalLength();
-    const flagCount = flags.length;
-
-    const svgRect = svg.getBoundingClientRect();
-    const scaleX = svgRect.width / 1000;
-    const scaleY = svgRect.height / 200;
-
-    flags.forEach((flag, index) => {
-        const point = path.getPointAtLength(
-            (pathLength / (flagCount - 1)) * index
-        );
-
-        flag.style.left = `${(point.x * scaleX) - 24}px`;
-        flag.style.top = `${(point.y * scaleY)-15}px`;
-
-        const baseTilt = index % 2 === 0 ? -6 : 6;
-        flag.style.setProperty('--base-tilt', baseTilt + 'deg');
-        flag.style.animationDelay = `${index * 0.15}s`;
-    });
-}
-function getFlagCount() {
-    const width = window.innerWidth;
-
-    if (width > 1200) return 23;
-    if (width > 768) return 18;
-    if (width > 480) return 12;
-    return 8; // small mobile
-}
-
-function initFlags() {
-    createFlags(getFlagCount());
-    positionFlags();
-}
-
-window.addEventListener("load", initFlags);
-
-window.addEventListener("resize", () => {
-    createFlags(getFlagCount());
-    positionFlags();
-});
-
-window.addEventListener("load", () => {
-    createFlags(23);   // 🔥 CHANGE THIS NUMBER for more/less flags
-    positionFlags();
-});
-
-window.addEventListener("resize", positionFlags);
-
 </script>
-
 </body>
 </html>

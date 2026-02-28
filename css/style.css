@@ -1,0 +1,490 @@
+:root {
+    --accent-red: #e10600;     /* clean modern red */
+}
+:root {
+    --font-main: 'Space Grotesk', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+
+    margin: 0;
+    font-family: var(--font-main);
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.7;
+    font-weight: 400;
+}
+.logo,
+.footer-title {
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 1px;
+}
+
+/* INTRO */
+#introVideo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 9999;
+}
+
+#mainContent{
+    display:none;
+    min-height:100vh;
+    background-size:cover;
+    background-position:center;
+}
+
+/* NAVBAR */
+
+.navbar {
+    position: fixed;
+    top: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+
+    width: 95%;          /* increase this */
+    max-width: 1200px; 
+    height:10%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 40px;
+
+    background: rgba(18, 18, 18, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+/* =========================
+   NAV LINKS
+========================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    color: #cfcfcf;
+    text-decoration: none;
+    margin-left: 28px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #e10600;
+}
+
+/* =========================
+   REGISTER BUTTON
+========================= */
+
+.register-btn {
+    padding: 8px 20px;
+    border-radius: 999px;
+    background: #e10600;
+    color: #ffffff !important;
+    font-weight: 600;
+    margin-left: 28px;
+    transition: 0.3s ease;
+}
+
+.register-btn:hover {
+    background: #ff1a1a;
+}
+
+/* =========================
+   HAMBURGER
+========================= */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.hamburger div {
+    width: 22px;
+    height: 2px;
+    background: #ffffff;
+}
+
+/* =========================
+   SIDE MENU (MOBILE)
+========================= */
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 250px;
+    height: 100%;
+
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(20px);
+
+    display: flex;
+    flex-direction: column;
+    padding: 100px 30px;
+    gap: 20px;
+
+    transition: 0.3s ease;
+    z-index: 999;
+}
+
+.side-menu a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.side-menu a:hover {
+    color: #e10600;
+}
+
+.side-menu.active {
+    right: 0;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        width: 90%;
+        padding: 12px 25px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+/* HERO */
+.hero{
+    
+    padding-top: 140px;
+
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:60px;
+}
+
+.cta{
+    margin-top:30px;
+    padding:15px 30px;
+    border-radius:40px;
+    background:rgba(255,255,255,0.15);
+    text-decoration:none;
+    color:white;
+}
+
+/* ORGANIZER PAGE */
+.organizer-section{
+    padding-top:120px;
+    text-align:center;
+}
+
+.organizer-container{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.glass-tile{
+    width:220px;
+    padding:20px;
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.1);
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.glass-tile:hover{
+    transform:translateY(-10px);
+}
+
+.glass-tile img{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+/* Notification */
+.notification{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    padding:15px 25px;
+    border-radius:20px;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.15);
+    animation:fadeOut 6s forwards;
+}
+
+@keyframes fadeOut{
+    0%{opacity:1;}
+    80%{opacity:1;}
+    100%{opacity:0; visibility:hidden;}
+}
+
+/* Mobile */
+.hamburger{
+    display:none;
+    flex-direction:column;
+    gap:5px;
+}
+
+.hamburger div{
+    width:25px;
+    height:3px;
+    background:white;
+}
+
+.side-menu{
+    position:fixed;
+    right:-100%;
+    top:0;
+    width:250px;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    padding:100px 20px;
+    transition:0.4s;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.side-menu.active{
+    right:0;
+}
+
+@media(max-width:768px){
+    .nav-links{display:none;}
+    .hamburger{display:flex;}
+}
+/* ================= FOOTER ================= */
+/* Hide main content initially */
+#mainContent {
+    display: none;
+}
+/* ================= FOOTER ================= */
+section:last-of-type {
+    margin-bottom: 10px;
+}
+.footer {
+    margin-top: 0;
+    padding: 60px 8% 25px;
+    background: rgba(18, 18, 18, 0.75);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: #e6e6e6;
+}
+
+/* remove old decorative divider */
+.footer::before {
+    display: none;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 240px;
+}
+
+/* BRAND */
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.footer-logo {
+    width: 80px;
+}
+
+.footer-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #ffffff;   /* pure white for clarity */
+    letter-spacing: 0.5px;
+}
+
+.footer-tagline {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #bdbdbd;
+}
+
+/* HEADINGS */
+
+.footer-col h3 {
+    font-size: 15px;
+    margin-bottom: 14px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* LINKS */
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #cfcfcf;
+    transition: 0.25s ease;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+/* VENUE */
+
+.footer-venue {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cfcfcf;
+}
+
+/* SOCIAL */
+
+.footer-socials {
+    margin-top: 15px;
+    display: flex;
+    gap: 12px;
+}
+.footer-socials a {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.25s ease;
+}
+
+.footer-socials a:hover {
+    background: var(--accent-red);
+}
+
+.footer-socials i {
+    color: #ffffff;
+    font-size: 16px;
+    transition: 0.25s ease;
+}
+.footer-links a {
+    position: relative;
+}
+
+.footer-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0%;
+    height: 2px;
+    background: var(--accent-red);
+    transition: 0.25s ease;
+}
+
+.footer-links a:hover::after {
+    width: 100%;
+}
+/* BOTTOM */
+
+.footer-bottom {
+    margin-top: 40px;
+    padding-top: 18px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+    color: #9e9e9e;
+}
