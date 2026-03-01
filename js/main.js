@@ -12,7 +12,7 @@ function setupIntro() {
         if (heroImg) heroImg.src = "assets/bgdesktop.jpeg";
     } else {
         source.src = "assets/intromobile.mp4";
-        if (heroImg) heroImg.src = "assets/bgmobile.png";
+        if (heroImg) heroImg.src = "assets/bgmobile.jpeg";
     }
 
     video.load();
