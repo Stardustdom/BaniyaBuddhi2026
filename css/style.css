@@ -72,7 +72,8 @@ p {
     left: 0;
     width: 100%;
     height: 100vh;
-    object-fit: cover;
+    object-fit: contain;   /* KEY CHANGE */
+    background: black;     /* fills empty space */
     z-index: 9999;
 }
 
