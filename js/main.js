@@ -39,6 +39,30 @@ video.addEventListener("ended", showMain);
    EVENT TIMELINE SCROLL ANIMATIONS
 ========================================== */
 
+/* ==========================================
+   MOBILE MENU TOGGLE
+========================================== */
+
+function toggleMenu() {
+    document.getElementById("sideMenu").classList.toggle("active");
+    document.getElementById("hamburger").classList.toggle("active");
+}
+
+// Close menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const sideMenuLinks = document.querySelectorAll('.side-menu a');
+    sideMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            document.getElementById("sideMenu").classList.remove("active");
+            document.getElementById("hamburger").classList.remove("active");
+        });
+    });
+});
+
+/* ==========================================
+   EVENT TIMELINE SCROLL ANIMATIONS
+========================================== */
+
 // Initialize Timeline Journey Animations
 function initTimelineAnimations() {
     const roadProgress = document.getElementById('roadProgress');
