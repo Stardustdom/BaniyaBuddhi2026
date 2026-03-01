@@ -1,41 +1,28 @@
 const video = document.getElementById("introVideo");
 const source = document.getElementById("videoSource");
 const main = document.getElementById("mainContent");
+const heroImg = document.getElementById("heroImg");
 
-if(video){
+function setupIntro() {
 
-    if(window.innerWidth > 768){
+    if (!video) return;
+
+    if (window.innerWidth > 1200) {
         source.src = "assets/introdesktop.mp4";
-        main.style.backgroundImage = "url('assets/bgdesktop.jpeg')";
+        if (heroImg) heroImg.src = "assets/bgdesktop.jpeg";
     } else {
         source.src = "assets/intromobile.mp4";
-        main.style.backgroundImage = "url('assets/bgmobile.png')";
+        if (heroImg) heroImg.src = "assets/bgmobile.png";
     }
 
     video.load();
-
-    // If video ends normally
-    video.onended = showMain;
-
-    // If video fails
-    video.onerror = showMain;
-
-    // Fallback timeout (VERY IMPORTANT)
-    setTimeout(showMain, 5000); // show after 5 sec max
 }
 
-function showMain(){
-    if(video){
-        video.style.display = "none";
-    }
-    if(main){
-        main.style.display = "block";
-    }
+function showMain() {
+    video.style.display = "none";
+    main.style.display = "block";
 }
-const introVideo = document.getElementById("introVideo");
-const mainContent = document.getElementById("mainContent");
 
-introVideo.addEventListener("ended", function () {
-    introVideo.style.display = "none";
-    mainContent.style.display = "block";
-});
+setupIntro();
+window.addEventListener("resize", setupIntro);
+video.addEventListener("ended", showMain);

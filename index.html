@@ -31,7 +31,7 @@
             </a>
         </div>
 
-        <div class="hamburger" onclick="toggleMenu()">
+        <div class="hamburger" id="hamburger"  onclick="toggleMenu()">
             <div></div><div></div><div></div>
         </div>
     </nav>
@@ -49,10 +49,9 @@
     </div>
 
     <!-- HERO -->
-    <section class="hero">
-       
-      
-    </section>
+<section class="hero">
+    <img src="assets/bgdesktop.jpeg" alt="Baniya Buddhi Hero" id="heroImg">
+</section>
 
 </div>
 <footer class="footer">
@@ -126,11 +125,13 @@
     </div>
 
 </footer>
-<script src="js/main.js"></script>
 <script>
 function toggleMenu() {
     document.getElementById("sideMenu").classList.toggle("active");
+    document.getElementById("hamburger").classList.toggle("active");
 }
 </script>
+<script src="js/main.js"></script>
+
 </body>
 </html>
