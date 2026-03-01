@@ -17,12 +17,20 @@ function setupIntro() {
 
     video.load();
 }
-
 function showMain() {
-    video.style.display = "none";
-    main.style.display = "block";
-}
+    if (!video || !main) return;
 
+    // fade out video
+    video.style.opacity = "0";
+
+    // fade in main content
+    main.style.opacity = "1";
+
+    // remove video after fade completes
+    setTimeout(() => {
+        video.style.display = "none";
+    }, 1200); // match CSS transition time
+}
 setupIntro();
 window.addEventListener("resize", setupIntro);
 video.addEventListener("ended", showMain);

@@ -75,8 +75,15 @@ p {
     object-fit: contain;   /* KEY CHANGE */
     background: black;     /* fills empty space */
     z-index: 9999;
+    opacity: 1;
+    transition: opacity 1.2s ease;
 }
 
+
+#mainContent {
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
 
 /* NAVBAR */
 
@@ -335,9 +342,7 @@ p {
 }
 /* ================= FOOTER ================= */
 /* Hide main content initially */
-#mainContent {
-    display: none;
-}
+
 #mainContent {
     margin: 0;
     padding: 0;
