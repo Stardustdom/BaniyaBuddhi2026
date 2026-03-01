@@ -485,10 +485,6 @@ p {
 ========================= */
 
 .about-section {
-    background: url('../assets/bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     padding: 100px 8%;
     position: relative;
     overflow: hidden;
@@ -1391,10 +1387,6 @@ html, body {
 ========================= */
 
 .gallery-section {
-    background: url('../assets/bg.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
     padding: 100px 8%;
     position: relative;
     overflow: hidden;
@@ -1606,3 +1598,650 @@ html, body {
         transform: translateY(-8px) scale(1.02);
     }
 }
+
+/* ==========================================
+   EVENT TIMELINE - JOURNEY ROAD ARCHITECTURE
+========================================== */
+
+.timeline-section {
+    position: relative;
+    padding: 100px 0 120px;
+    overflow: hidden;
+    border-top: 2px solid rgba(255, 183, 77, 0.5);
+}
+
+/* Gallery-style gradient overlay */
+.timeline-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-gallery);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Subtle mesh texture overlay */
+.timeline-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(139, 111, 61, 0.02) 3px, rgba(139, 111, 61, 0.02) 6px),
+        repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(139, 111, 61, 0.02) 3px, rgba(139, 111, 61, 0.02) 6px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+/* ==========================================
+   TIMELINE HEADER
+========================================== */
+
+.timeline-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.timeline-heading {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.timeline-accent {
+    color: var(--accent-red);
+    position: relative;
+}
+
+.timeline-accent::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120%;
+    height: 4px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--accent-red) 20%, 
+        var(--accent-orange) 50%, 
+        var(--accent-red) 80%, 
+        transparent 100%);
+    border-radius: 2px;
+}
+
+.timeline-subtitle {
+    text-align: center;
+    font-family: var(--font-main);
+    font-size: 1.1rem;
+    color: var(--text-medium);
+    margin-bottom: 80px;
+    font-style: italic;
+}
+
+/* ==========================================
+   DECORATIVE BACKGROUND GLOWS
+========================================== */
+
+.timeline-bg-decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.glow-spot {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.12;
+    animation: pulse-glow 8s ease-in-out infinite;
+}
+
+.glow-1 {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, #FF6F00 0%, transparent 70%);
+    top: 10%;
+    left: -10%;
+    animation-delay: 0s;
+}
+
+.glow-2 {
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, #FFA000 0%, transparent 70%);
+    top: 50%;
+    right: -15%;
+    animation-delay: 3s;
+}
+
+.glow-3 {
+    width: 450px;
+    height: 450px;
+    background: radial-gradient(circle, #D32F2F 0%, transparent 70%);
+    bottom: 10%;
+    left: -5%;
+    animation-delay: 6s;
+}
+
+/* ==========================================
+   JOURNEY ROAD WRAPPER (Central Structure)
+========================================== */
+
+.journey-road-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/* ==========================================
+   SVG ROAD PATH
+========================================== */
+
+.journey-road {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 1800px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.road-base {
+    filter: drop-shadow(0 6px 16px rgba(139, 111, 61, 0.25));
+}
+
+.road-progress {
+    filter: drop-shadow(0 0 12px rgba(255, 111, 0, 0.6));
+}
+
+.road-dashes {
+    animation: dash-flow 4s linear infinite;
+}
+
+@keyframes dash-flow {
+    to {
+        stroke-dashoffset: -43;
+    }
+}
+
+/* Road Markers (Checkpoint Nodes) - Hidden */
+.road-marker {
+    display: none;
+}
+
+/* ==========================================
+   CHECKPOINTS WRAPPER
+========================================== */
+
+.checkpoints-wrapper {
+    position: relative;
+    z-index: 3;
+}
+
+/* ==========================================
+   CHECKPOINT STRUCTURE
+========================================== */
+
+.checkpoint {
+    position: relative;
+    margin-bottom: 260px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.checkpoint.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.checkpoint:last-child {
+    margin-bottom: 260px;
+}
+
+/* Checkpoint Content Container */
+.checkpoint-content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Alternating Layout */
+.checkpoint-left .checkpoint-content {
+    flex-direction: row-reverse;
+}
+
+.checkpoint-right .checkpoint-content {
+    flex-direction: row;
+}
+
+/* ==========================================
+   SIGNBOARD DESIGN
+========================================== */
+
+.signboard {
+    flex-shrink: 0;
+    width: 280px;
+    background: linear-gradient(135deg, 
+        var(--brown-soft) 0%, 
+        var(--brown-deep) 100%);
+    padding: 25px 20px;
+    border-radius: 16px;
+    border: 4px solid var(--brown-dark);
+    box-shadow: 
+        0 10px 30px rgba(74, 60, 40, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+/* Wood grain texture */
+.signboard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 0, 0, 0.03) 2px,
+            rgba(0, 0, 0, 0.03) 4px
+        );
+    border-radius: 12px;
+    pointer-events: none;
+}
+
+/* Glow effect on hover */
+.signboard::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    background: linear-gradient(135deg, 
+        rgba(255, 111, 0, 0.3) 0%, 
+        rgba(211, 47, 47, 0.2) 100%);
+    border-radius: 16px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.checkpoint.visible .signboard::after {
+    opacity: 1;
+}
+
+.signboard:hover {
+    transform: translateY(-5px) rotate(-1deg);
+    box-shadow: 
+        0 14px 40px rgba(74, 60, 40, 0.5),
+        inset 0 2px 0 rgba(255, 255, 255, 0.15);
+}
+
+.signboard-icon {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+.signboard-title {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--cream-light);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.signboard-date {
+    font-family: var(--font-main);
+    font-size: 1.05rem;
+    color: var(--cream-medium);
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.signboard-date span {
+    display: inline-block;
+    background: var(--cream-light);
+    color: var(--accent-red);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    box-shadow: 0 3px 8px rgba(211, 47, 47, 0.3);
+    font-family: var(--font-heading);
+}
+
+.signboard-subtitle {
+    font-family: var(--font-main);
+    font-size: 0.8rem;
+    color: var(--cream-medium);
+    text-align: center;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+/* ==========================================
+   TREASURE MAP DETAIL BOX
+========================================== */
+
+.treasure-map {
+    flex-shrink: 0;
+    width: 320px;
+    background: linear-gradient(135deg, 
+        #FFF8E7 0%, 
+        #F5E6D3 100%);
+    border-radius: 14px;
+    border: 3px solid var(--brown-dark);
+    box-shadow: 
+        0 8px 24px rgba(74, 60, 40, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+.treasure-map:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 
+        0 12px 32px rgba(74, 60, 40, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+/* Map Header */
+.map-header {
+    background: linear-gradient(135deg, #D32F2F 0%, #FF6F00 100%);
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--brown-dark);
+}
+
+.map-badge {
+    font-family: var(--font-heading);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #FFF8E7;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.map-emoji {
+    font-size: 1.3rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* Map Body */
+.map-body {
+    padding: 20px;
+    position: relative;
+}
+
+/* Aged paper texture */
+.map-body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 4px,
+            rgba(139, 111, 61, 0.03) 4px,
+            rgba(139, 111, 61, 0.03) 8px
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.map-body h4 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent-red);
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(139, 111, 61, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+.map-body p {
+    font-family: var(--font-main);
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+}
+
+.map-highlight {
+    background: rgba(255, 111, 0, 0.12);
+    padding: 10px 14px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-orange);
+    font-family: var(--font-main);
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    position: relative;
+    z-index: 1;
+}
+
+.map-highlight strong {
+    color: var(--accent-red);
+    font-weight: 700;
+}
+
+.map-note {
+    display: block;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: var(--text-light);
+    margin-top: 6px;
+}
+
+/* ==========================================
+   TIMELINE RESPONSIVE DESIGN
+========================================== */
+
+/* Large Desktops */
+@media (min-width: 1400px) {
+    .treasure-map {
+        width: 360px;
+    }
+    
+    .checkpoint-content {
+        gap: 40px;
+    }
+}
+
+/* Tablet and below - Stack layout */
+@media (max-width: 1024px) {
+    .checkpoints-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .checkpoint-content {
+        flex-direction: column !important;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .checkpoint-left .checkpoint-content,
+    .checkpoint-right .checkpoint-content {
+        flex-direction: column !important;
+    }
+    
+    .signboard,
+    .treasure-map {
+        width: 100%;
+        max-width: 360px;
+    }
+    
+    .signboard:hover {
+        transform: translateY(-5px) rotate(0deg);
+    }
+}
+
+@media (max-width: 768px) {
+    .timeline-section {
+        padding: 80px 0 90px;
+    }
+
+    .timeline-heading {
+        font-size: 2rem;
+        margin-bottom: 8px;
+    }
+    
+    .timeline-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 60px;
+    }
+
+    .journey-road {
+        width: 250px;
+        height: 950px;
+    }
+
+    .checkpoint {
+        margin-bottom: 180px;
+    }
+    
+    .signboard {
+        max-width: 300px;
+        padding: 20px 16px;
+    }
+
+    .signboard-icon {
+        font-size: 2.5rem;
+    }
+
+    .signboard-title {
+        font-size: 1.4rem;
+    }
+    
+    .treasure-map {
+        max-width: 320px;
+    }
+    
+    .map-body h4 {
+        font-size: 1.1rem;
+    }
+    
+    .map-body p {
+        font-size: 0.85rem;
+    }
+
+    .glow-spot {
+        filter: blur(60px);
+        opacity: 0.1;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-section {
+        padding: 70px 0 80px;
+    }
+    
+    .timeline-heading {
+        font-size: 1.75rem;
+    }
+    
+    .timeline-subtitle {
+        font-size: 0.85rem;
+        margin-bottom: 50px;
+    }
+
+    .journey-road {
+        width: 220px;
+        height: 900px;
+    }
+
+    .checkpoint {
+        margin-bottom: 160px;
+    }
+
+    .signboard {
+        max-width: 280px;
+        padding: 18px 14px;
+    }
+
+    .signboard-icon {
+        font-size: 2.2rem;
+    }
+
+    .signboard-title {
+        font-size: 1.2rem;
+    }
+    
+    .signboard-date {
+        font-size: 0.95rem;
+    }
+    
+    .treasure-map {
+        max-width: 290px;
+    }
+    
+    .map-body {
+        padding: 16px;
+    }
+    
+    .map-body h4 {
+        font-size: 1rem;
+    }
+    
+    .map-body p {
+        font-size: 0.8rem;
+    }
+    
+    .map-highlight {
+        font-size: 0.8rem;
+        padding: 8px 12px;
+    }
+}
+
+/* ==========================================
+   END OF TIMELINE SECTION
+========================================== */
