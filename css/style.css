@@ -2266,3 +2266,407 @@ html, body {
 /* ==========================================
    END OF TIMELINE SECTION
 ========================================== */
+/* ==========================================
+   CONTACT US SECTION - Postage Stamp Design
+========================================== */
+
+.contact-section {
+    position: relative;
+    padding: 120px 0;
+    background: var(--gradient-about);
+    overflow: visible;
+}
+
+.contact-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+/* Section Header */
+.contact-header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.contact-subtitle {
+    font-size: clamp(18px, 2.5vw, 24px);
+    color: var(--text-medium);
+    font-weight: 500;
+    margin-top: 50px;
+    letter-spacing: 0.5px;
+    font-style: italic;
+}
+
+/* Contact Cards Wrapper - Single Row Layout */
+.contact-cards-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 50px;
+    padding: 20px 40px;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    
+    /* Styled scrollbar */
+    scrollbar-width: thin;
+    scrollbar-color: var(--brown-soft) var(--cream-medium);
+}
+
+.contact-cards-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.contact-cards-wrapper::-webkit-scrollbar-track {
+    background: var(--cream-medium);
+    border-radius: 10px;
+}
+
+.contact-cards-wrapper::-webkit-scrollbar-thumb {
+    background: var(--brown-soft);
+    border-radius: 10px;
+}
+
+.contact-cards-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--brown-deep);
+}
+
+/* Individual Contact Card */
+.contact-card {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+
+/* Postage Stamp Frame - Exact Dimensions with Scalloped Edges */
+.stamp-frame {
+    width: 386.39px;
+    height: 579.8px;
+    position: relative;
+    background: linear-gradient(135deg, 
+        var(--cream-light) 0%, 
+        var(--cream-medium) 50%, 
+        var(--cream-base) 100%);
+    padding: 16px;
+    box-shadow: 
+        0 10px 40px rgba(139, 111, 61, 0.25),
+        inset 0 2px 4px rgba(255, 255, 255, 0.5);
+    transition: var(--transition-smooth);
+    
+    /* Scalloped stamp edge effect - creates perforated cuts on all sides */
+    -webkit-mask-image: 
+        /* Top edge scallops */
+        repeating-radial-gradient(circle at 0 0, transparent 0, transparent 6px, black 6px, black 18px) 50% 0/36px 18px repeat-x,
+        /* Bottom edge scallops */
+        repeating-radial-gradient(circle at 0 100%, transparent 0, transparent 6px, black 6px, black 18px) 50% 100%/36px 18px repeat-x,
+        /* Left edge scallops */
+        repeating-radial-gradient(circle at 0 0, transparent 0, transparent 6px, black 6px, black 18px) 0 50%/18px 36px repeat-y,
+        /* Right edge scallops */
+        repeating-radial-gradient(circle at 100% 0, transparent 0, transparent 6px, black 6px, black 18px) 100% 50%/18px 36px repeat-y,
+        /* Center fill */
+        linear-gradient(black, black) 18px 18px / calc(100% - 36px) calc(100% - 36px) no-repeat;
+    
+    mask-image: 
+        /* Top edge scallops */
+        repeating-radial-gradient(circle at 0 0, transparent 0, transparent 6px, black 6px, black 18px) 50% 0/36px 18px repeat-x,
+        /* Bottom edge scallops */
+        repeating-radial-gradient(circle at 0 100%, transparent 0, transparent 6px, black 6px, black 18px) 50% 100%/36px 18px repeat-x,
+        /* Left edge scallops */
+        repeating-radial-gradient(circle at 0 0, transparent 0, transparent 6px, black 6px, black 18px) 0 50%/18px 36px repeat-y,
+        /* Right edge scallops */
+        repeating-radial-gradient(circle at 100% 0, transparent 0, transparent 6px, black 6px, black 18px) 100% 50%/18px 36px repeat-y,
+        /* Center fill */
+        linear-gradient(black, black) 18px 18px / calc(100% - 36px) calc(100% - 36px) no-repeat;
+    
+    -webkit-mask-composite: source-over;
+    mask-composite: add;
+}
+
+.stamp-frame::before {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    right: 24px;
+    bottom: 24px;
+    border: 1.5px dashed var(--brown-soft);
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.stamp-frame::after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    right: 22px;
+    bottom: 22px;
+    border: 1px solid rgba(139, 111, 61, 0.12);
+    pointer-events: none;
+}
+
+.stamp-frame:hover {
+    transform: translateY(-10px);
+    box-shadow: 
+        0 20px 60px rgba(139, 111, 61, 0.35),
+        inset 0 2px 4px rgba(255, 255, 255, 0.6),
+        0 0 30px rgba(255, 111, 0, 0.15);
+}
+
+/* Stamp Image Container */
+.stamp-image-container {
+    position: relative;
+    width: calc(100% - 32px);
+    height: calc(100% - 32px);
+    margin: 16px;
+    overflow: hidden;
+    background: var(--cream-base);
+}
+
+/* Stamp Image */
+.stamp-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.stamp-image-container:hover .stamp-image {
+    filter: blur(4px);
+    transform: scale(1.05);
+}
+
+/* Stamp Overlay - Appears on Hover */
+.stamp-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, 
+        rgba(74, 60, 40, 0.85) 0%, 
+        rgba(107, 85, 48, 0.90) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition-smooth);
+    pointer-events: none;
+}
+
+.stamp-image-container:hover .stamp-overlay {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Stamp Buttons Container */
+.stamp-buttons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Individual Stamp Button */
+.stamp-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: var(--white-warm);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    opacity: 0;
+    transform: translateY(20px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.stamp-image-container:hover .stamp-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.stamp-image-container:hover .stamp-btn:nth-child(1) {
+    transition-delay: 0.1s;
+}
+
+.stamp-image-container:hover .stamp-btn:nth-child(2) {
+    transition-delay: 0.2s;
+}
+
+/* LinkedIn Button - Warm Adjusted */
+.linkedin-btn {
+    background: linear-gradient(135deg, #B8783A 0%, #A06830 100%);
+}
+
+.linkedin-btn:hover {
+    background: linear-gradient(135deg, #D4904A 0%, #B87A38 100%);
+    box-shadow: 
+        0 10px 30px rgba(184, 120, 58, 0.5),
+        0 0 25px rgba(184, 120, 58, 0.4);
+    transform: scale(1.1);
+}
+
+/* WhatsApp Button - Muted Green */
+.whatsapp-btn {
+    background: linear-gradient(135deg, #7A9B5F 0%, #5E8045 100%);
+}
+
+.whatsapp-btn:hover {
+    background: linear-gradient(135deg, #8FB06F 0%, #6E9050 100%);
+    box-shadow: 
+        0 10px 30px rgba(122, 155, 95, 0.5),
+        0 0 25px rgba(122, 155, 95, 0.4);
+    transform: scale(1.1);
+}
+
+/* Contact Info Below Stamp */
+.contact-info {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.contact-name {
+    font-family: var(--font-heading);
+    font-size: clamp(20px, 2.5vw, 26px);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.contact-role {
+    font-size: clamp(14px, 1.8vw, 17px);
+    color: var(--text-medium);
+    font-weight: 500;
+    margin: 0;
+    font-style: italic;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN - Contact Section
+========================================== */
+
+/* Tablets and Medium Screens */
+@media (max-width: 1024px) {
+    .contact-cards-wrapper {
+        gap: 30px;
+        padding: 20px 30px;
+        overflow-x: auto;
+    }
+    
+    .contact-card {
+        min-width: 320px;
+    }
+    
+    .stamp-frame {
+        width: 320px;
+        height: 480px;
+    }
+}
+
+/* Mobile Devices - Maintain Single Row with Scroll */
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 80px 0;
+        overflow: visible;
+    }
+    
+    .contact-header {
+        margin-bottom: 50px;
+        padding: 0 20px;
+    }
+    
+    .contact-subtitle {
+        margin-top: 40px;
+    }
+    
+    .contact-cards-wrapper {
+        gap: 30px;
+        padding: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
+        justify-content: flex-start;
+        overflow-x: auto;
+        scroll-snap-type: x proximity;
+    }
+    
+    .contact-card {
+        scroll-snap-align: center;
+        min-width: 280px;
+    }
+    
+    .stamp-frame {
+        width: 280px;
+        height: 420px;
+    }
+    
+    .stamp-image-container {
+        width: calc(100% - 24px);
+        height: calc(100% - 24px);
+        margin: 12px;
+    }
+    
+    .stamp-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+    
+    .contact-name {
+        font-size: 18px;
+    }
+    
+    .contact-role {
+        font-size: 14px;
+    }
+}
+
+/* Very Small Screens */
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 60px 0;
+        overflow: visible;
+    }
+    
+    .contact-header {
+        padding: 0 15px;
+    }
+    
+    .contact-cards-wrapper {
+        gap: 25px;
+        padding: 20px 15px;
+        padding-left: 15px;
+    }
+    
+    .contact-card {
+        min-width: 240px;
+    }
+    
+    .stamp-frame {
+        width: 240px;
+        height: 360px;
+    }
+    
+    .stamp-image-container {
+        width: calc(100% - 20px);
+        height: calc(100% - 20px);
+        margin: 10px;
+    }
+    
+    /* Show scrollbar on mobile for better UX */
+    .contact-cards-wrapper::-webkit-scrollbar {
+        height: 6px;
+    }
+}
+
+/* ==========================================
+   END OF CONTACT US SECTION
+========================================== */
