@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Baniya Buddhi</title>
+<link rel="icon" type="image/png" href="assets/baniya_logo.png">
+<link rel="shortcut icon" type="image/png" href="assets/baniya_logo.png">
+<link rel="apple-touch-icon" href="assets/baniya_logo.png">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Orbitron:wght@600;700&display=swap" rel="stylesheet"></head>
@@ -19,13 +22,20 @@
 
     <!-- NAVBAR -->
     <nav class="navbar">
-        <div class="logo">BANIYA BUDDHI™</div>
+        <div class="nav-left">
+            <div class="nav-logos">
+                <img src="assets/startup_club_logo.png" alt="Startup Club Logo">
+                <img src="assets/baniya_logo.png" alt="Baniya Buddhi Logo">
+            </div>
+            <a href="#hero" class="brand-title">BANIYA BUDDHI™</a>
+        </div>
 
         <div class="nav-links">
-            <a href="#index">Home</a>
-            <a href="https://drive.google.com/file/d/1G2ro7_RCuzvX7s6OygCRDyKlQmyw5fT-/view?usp=sharing">Rules</a>
-            <a href="https://drive.google.com/file/d/1dac7BzRK_RjNdUtNrDJcQDiYEnIwfqU3/view?usp=sharing">Tech Elements</a>
-            <a href="organizers.html">Organizers</a>
+            <a href="#hero">Home</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#timeline">Timeline</a>
+            <a href="#contact">Contact Us</a>
+            <a href="#startup-club">About Us</a>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0tjoJkDRoZMtCf9zNxbNLZfVv0FtWHmqHaf1Al0L_0g3F4Q/viewform" target="_blank" class="register-btn">
                 Register Now
             </a>
@@ -38,23 +48,23 @@
 
     <!-- SIDE MENU (Mobile) -->
     <div class="side-menu" id="sideMenu">
-        <a href="#index">Home</a>
-        <a href="https://drive.google.com/file/d/1G2ro7_RCuzvX7s6OygCRDyKlQmyw5fT-/view?usp=sharing">Rules</a>
-        <a href="https://drive.google.com/file/d/1dac7BzRK_RjNdUtNrDJcQDiYEnIwfqU3/view?usp=sharing">Tech Elements</a>
-        <a href="organizers.html">Organizers</a>
-        
+        <a href="#hero">Home</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#startup-club">About Us</a>
+        <a href="#contact">Contact Us</a>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0tjoJkDRoZMtCf9zNxbNLZfVv0FtWHmqHaf1Al0L_0g3F4Q/viewform" target="_blank" class="register-btn">
-                Register Now
-            </a>
+            Register Now
+        </a>
     </div>
 
     <!-- HERO -->
-<section class="hero">
+<section class="hero" id="hero">
     <img src="assets/bgdesktop.jpeg" alt="Baniya Buddhi Hero" id="heroImg">
 </section>
 
     <!-- ABOUT THE EVENT -->
-    <section class="about-section">
+    <section class="about-section" id="about">
         <div class="about-content">
             <h1 class="story-heading">STORY OF BANIYA BUDDHI</h1>
             <h2 class="event-tagline">BANIYA BUDDHI is</h2>
@@ -115,7 +125,7 @@
     </section>
 
     <!-- EVENT GALLERY -->
-    <section class="gallery-section">
+    <section class="gallery-section" id="gallery">
         <div class="gallery-container">
             <h1 class="gallery-heading">EVENT <span class="gallery-accent">GALLERY</span></h1>
             
@@ -154,7 +164,7 @@
     </section>
 
     <!-- EVENT TIMELINE -->
-    <section class="timeline-section">
+    <section class="timeline-section" id="timeline">
         <div class="timeline-container">
             <h1 class="timeline-heading">EVENT <span class="timeline-accent">TIMELINE</span></h1>
             <p class="timeline-subtitle">Your Journey to Entrepreneurial Success</p>
@@ -355,7 +365,7 @@
     </section>
 
     <!-- CONTACT US SECTION -->
-    <section class="contact-section">
+    <section class="contact-section" id="contact">
         <div class="contact-container">
             
             <!-- Section Header -->
@@ -441,7 +451,7 @@
     </section>
 
     <!-- ABOUT THE STARTUP CLUB SECTION -->
-    <section class="startup-club-section">
+    <section class="startup-club-section" id="startup-club">
         <div class="startup-club-container">
             
             <!-- Section Heading -->
@@ -492,30 +502,18 @@
         <!-- Quick Links -->
         <div class="footer-col">
             <h3>Quick Links</h3>
-           <ul class="footer-links">
-    <li><a href="index.html">Home</a></li>
-
-    <li>
-        <a href="https://drive.google.com/file/d/1G2ro7_RCuzvX7s6OygCRDyKlQmyw5fT-/view?usp=sharing" target="_blank">
-            Rules
-        </a>
-    </li>
-
-    <li>
-        <a href="https://drive.google.com/file/d/1dac7BzRK_RjNdUtNrDJcQDiYEnIwfqU3/view?usp=sharing" target="_blank">
-            Tech Elements
-        </a>
-    </li>
-
-    <li><a href="organizers.html">Organizers</a></li>
-
-    <li>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0tjoJkDRoZMtCf9zNxbNLZfVv0FtWHmqHaf1Al0L_0g3F4Q/viewform"
-           target="_blank">
-            Register Now
-        </a>
-    </li>
-</ul>
+            <ul class="footer-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#timeline">Timeline</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li><a href="#startup-club">About Us</a></li>
+                <li>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe0tjoJkDRoZMtCf9zNxbNLZfVv0FtWHmqHaf1Al0L_0g3F4Q/viewform" target="_blank">
+                        Register Now
+                    </a>
+                </li>
+            </ul>
         </div>
 
         <!-- Venue -->
@@ -550,6 +548,17 @@ function toggleMenu() {
     document.getElementById("sideMenu").classList.toggle("active");
     document.getElementById("hamburger").classList.toggle("active");
 }
+
+// Close menu when clicking on a link
+document.addEventListener('DOMContentLoaded', function() {
+    const sideMenuLinks = document.querySelectorAll('.side-menu a');
+    sideMenuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            document.getElementById("sideMenu").classList.remove("active");
+            document.getElementById("hamburger").classList.remove("active");
+        });
+    });
+});
 </script>
 <script src="js/main.js"></script>
 
