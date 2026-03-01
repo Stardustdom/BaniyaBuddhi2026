@@ -174,7 +174,9 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background: #ffffff;
+    position: relative;
 }
+
 h1 {
     font-size: 3rem;
     font-weight: 700;
@@ -489,19 +491,12 @@ p {
     position: relative;
     overflow: hidden;
     border-top: 2px solid rgba(255, 224, 178, 0.5);
-}
-
-/* Multi-layered warm gradient overlay - MORE CONTRAST */
-.about-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-about);
-    pointer-events: none;
-    z-index: 0;
+    /* Layered background: SVG texture + gradient */
+    background:
+        url("data:image/svg+xml,%3Csvg width='350' height='350' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.35'%3E%3C!-- Graph Chart --%3E%3Cg transform='translate(40,40) rotate(5)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='0,20 6,14 12,18 18,8 24,12 30,4'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='26' x2='30' y2='26'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='0' x2='0' y2='26'/%3E%3C/g%3E%3C!-- Dollar Sign --%3E%3Cg transform='translate(130,35) rotate(-8)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M18,6 Q24,6 24,12 Q24,18 18,18 L12,18 Q6,18 6,24 Q6,30 12,30 L18,30'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='0' x2='15' y2='36'/%3E%3C/g%3E%3C!-- Lightbulb --%3E%3Cg transform='translate(230,40) rotate(3)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='12' r='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,22 L10,26 L20,26 L20,22'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='2' x2='15' y2='0'/%3E%3C/g%3E%3C!-- Rocket --%3E%3Cg transform='translate(300,45) rotate(-5)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M15,2 L15,22 M15,2 L10,10 L15,7 L20,10 Z'/%3E%3Cellipse fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='25' rx='8' ry='4'/%3E%3C/g%3E%3C!-- Gear --%3E%3Cg transform='translate(80,140) rotate(10)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='5'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M15,0 L15,6 M15,24 L15,30 M0,15 L6,15 M24,15 L30,15'/%3E%3C/g%3E%3C!-- Coffee Cup --%3E%3Cg transform='translate(180,135) rotate(-6)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M6,10 L6,24 Q6,28 10,28 L20,28 Q24,28 24,24 L24,10 Z'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='5' y1='10' x2='25' y2='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,4 Q12,6 10,8 M15,4 Q17,6 15,8 M20,4 Q22,6 20,8'/%3E%3C/g%3E%3C!-- Handshake --%3E%3Cg transform='translate(270,140) rotate(4)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M2,18 L8,18 L13,13 L18,18 L24,18 M8,18 L8,12 L2,12 M24,18 L24,12 L30,12'/%3E%3C/g%3E%3C!-- Bar Chart --%3E%3Cg transform='translate(40,240) rotate(-7)'%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='2' y='18' width='5' height='12'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='10' y='12' width='5' height='18'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='18' y='6' width='5' height='24'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='26' y='14' width='5' height='16'/%3E%3C/g%3E%3C!-- Target --%3E%3Cg transform='translate(140,245) rotate(8)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='12'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='7'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='2'/%3E%3C/g%3E%3C!-- Trending Arrow --%3E%3Cg transform='translate(240,240) rotate(6)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='2,22 10,14 15,19 28,6'/%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='20,6 28,6 28,14'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat,
+        radial-gradient(circle at 15% 20%, rgba(255, 183, 77, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(255, 138, 101, 0.12) 0%, transparent 50%),
+        linear-gradient(160deg, #FFE8CC 0%, #F5D9B5 25%, #E8C89F 75%, #D4B883 100%);
 }
 
 /* Subtle mesh texture overlay */
@@ -1391,19 +1386,12 @@ html, body {
     position: relative;
     overflow: hidden;
     border-top: 2px solid rgba(255, 183, 77, 0.5);
-}
-
-/* Vibrant warm gradient overlay - STRONGER CONTRAST */
-.gallery-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-gallery);
-    pointer-events: none;
-    z-index: 0;
+    /* Layered background: SVG texture + gradient */
+    background:
+        url("data:image/svg+xml,%3Csvg width='350' height='350' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.35'%3E%3C!-- Graph Chart --%3E%3Cg transform='translate(40,40) rotate(5)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='0,20 6,14 12,18 18,8 24,12 30,4'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='26' x2='30' y2='26'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='0' x2='0' y2='26'/%3E%3C/g%3E%3C!-- Dollar Sign --%3E%3Cg transform='translate(130,35) rotate(-8)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M18,6 Q24,6 24,12 Q24,18 18,18 L12,18 Q6,18 6,24 Q6,30 12,30 L18,30'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='0' x2='15' y2='36'/%3E%3C/g%3E%3C!-- Lightbulb --%3E%3Cg transform='translate(230,40) rotate(3)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='12' r='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,22 L10,26 L20,26 L20,22'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='2' x2='15' y2='0'/%3E%3C/g%3E%3C!-- Rocket --%3E%3Cg transform='translate(300,45) rotate(-5)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M15,2 L15,22 M15,2 L10,10 L15,7 L20,10 Z'/%3E%3Cellipse fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='25' rx='8' ry='4'/%3E%3C/g%3E%3C!-- Gear --%3E%3Cg transform='translate(80,140) rotate(10)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='5'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M15,0 L15,6 M15,24 L15,30 M0,15 L6,15 M24,15 L30,15'/%3E%3C/g%3E%3C!-- Coffee Cup --%3E%3Cg transform='translate(180,135) rotate(-6)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M6,10 L6,24 Q6,28 10,28 L20,28 Q24,28 24,24 L24,10 Z'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='5' y1='10' x2='25' y2='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,4 Q12,6 10,8 M15,4 Q17,6 15,8 M20,4 Q22,6 20,8'/%3E%3C/g%3E%3C!-- Handshake --%3E%3Cg transform='translate(270,140) rotate(4)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M2,18 L8,18 L13,13 L18,18 L24,18 M8,18 L8,12 L2,12 M24,18 L24,12 L30,12'/%3E%3C/g%3E%3C!-- Bar Chart --%3E%3Cg transform='translate(40,240) rotate(-7)'%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='2' y='18' width='5' height='12'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='10' y='12' width='5' height='18'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='18' y='6' width='5' height='24'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='26' y='14' width='5' height='16'/%3E%3C/g%3E%3C!-- Target --%3E%3Cg transform='translate(140,245) rotate(8)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='12'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='7'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='2'/%3E%3C/g%3E%3C!-- Trending Arrow --%3E%3Cg transform='translate(240,240) rotate(6)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='2,22 10,14 15,19 28,6'/%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='20,6 28,6 28,14'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat,
+        radial-gradient(circle at 80% 30%, rgba(255, 160, 0, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 20% 70%, rgba(255, 111, 0, 0.15) 0%, transparent 50%),
+        linear-gradient(200deg, #FFF3E0 0%, #FFE0B2 30%, #FFCC80 70%, #FFB74D 100%);
 }
 
 /* Subtle mesh texture overlay */
@@ -1608,19 +1596,12 @@ html, body {
     padding: 100px 0 120px;
     overflow: hidden;
     border-top: 2px solid rgba(255, 183, 77, 0.5);
-}
-
-/* Gallery-style gradient overlay */
-.timeline-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--gradient-gallery);
-    pointer-events: none;
-    z-index: 0;
+    /* Layered background: SVG texture + gradient */
+    background:
+        url("data:image/svg+xml,%3Csvg width='350' height='350' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.35'%3E%3C!-- Graph Chart --%3E%3Cg transform='translate(40,40) rotate(5)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='0,20 6,14 12,18 18,8 24,12 30,4'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='26' x2='30' y2='26'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='0' x2='0' y2='26'/%3E%3C/g%3E%3C!-- Dollar Sign --%3E%3Cg transform='translate(130,35) rotate(-8)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M18,6 Q24,6 24,12 Q24,18 18,18 L12,18 Q6,18 6,24 Q6,30 12,30 L18,30'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='0' x2='15' y2='36'/%3E%3C/g%3E%3C!-- Lightbulb --%3E%3Cg transform='translate(230,40) rotate(3)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='12' r='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,22 L10,26 L20,26 L20,22'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='2' x2='15' y2='0'/%3E%3C/g%3E%3C!-- Rocket --%3E%3Cg transform='translate(300,45) rotate(-5)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M15,2 L15,22 M15,2 L10,10 L15,7 L20,10 Z'/%3E%3Cellipse fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='25' rx='8' ry='4'/%3E%3C/g%3E%3C!-- Gear --%3E%3Cg transform='translate(80,140) rotate(10)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='5'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M15,0 L15,6 M15,24 L15,30 M0,15 L6,15 M24,15 L30,15'/%3E%3C/g%3E%3C!-- Coffee Cup --%3E%3Cg transform='translate(180,135) rotate(-6)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M6,10 L6,24 Q6,28 10,28 L20,28 Q24,28 24,24 L24,10 Z'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='5' y1='10' x2='25' y2='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,4 Q12,6 10,8 M15,4 Q17,6 15,8 M20,4 Q22,6 20,8'/%3E%3C/g%3E%3C!-- Handshake --%3E%3Cg transform='translate(270,140) rotate(4)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M2,18 L8,18 L13,13 L18,18 L24,18 M8,18 L8,12 L2,12 M24,18 L24,12 L30,12'/%3E%3C/g%3E%3C!-- Bar Chart --%3E%3Cg transform='translate(40,240) rotate(-7)'%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='2' y='18' width='5' height='12'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='10' y='12' width='5' height='18'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='18' y='6' width='5' height='24'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='26' y='14' width='5' height='16'/%3E%3C/g%3E%3C!-- Target --%3E%3Cg transform='translate(140,245) rotate(8)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='12'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='7'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='2'/%3E%3C/g%3E%3C!-- Trending Arrow --%3E%3Cg transform='translate(240,240) rotate(6)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='2,22 10,14 15,19 28,6'/%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='20,6 28,6 28,14'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat,
+        radial-gradient(circle at 80% 30%, rgba(255, 160, 0, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 20% 70%, rgba(255, 111, 0, 0.15) 0%, transparent 50%),
+        linear-gradient(200deg, #FFF3E0 0%, #FFE0B2 30%, #FFCC80 70%, #FFB74D 100%);
 }
 
 /* Subtle mesh texture overlay */
@@ -2277,8 +2258,9 @@ html, body {
     position: relative;
     overflow: hidden;
     
-    /* Warm layered carnival gradient */
+    /* Layered background: SVG texture + gradient */
     background: 
+        url("data:image/svg+xml,%3Csvg width='350' height='350' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.35'%3E%3C!-- Graph Chart --%3E%3Cg transform='translate(40,40) rotate(5)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='0,20 6,14 12,18 18,8 24,12 30,4'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='26' x2='30' y2='26'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='0' x2='0' y2='26'/%3E%3C/g%3E%3C!-- Dollar Sign --%3E%3Cg transform='translate(130,35) rotate(-8)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M18,6 Q24,6 24,12 Q24,18 18,18 L12,18 Q6,18 6,24 Q6,30 12,30 L18,30'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='0' x2='15' y2='36'/%3E%3C/g%3E%3C!-- Lightbulb --%3E%3Cg transform='translate(230,40) rotate(3)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='12' r='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,22 L10,26 L20,26 L20,22'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='2' x2='15' y2='0'/%3E%3C/g%3E%3C!-- Rocket --%3E%3Cg transform='translate(300,45) rotate(-5)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M15,2 L15,22 M15,2 L10,10 L15,7 L20,10 Z'/%3E%3Cellipse fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='25' rx='8' ry='4'/%3E%3C/g%3E%3C!-- Gear --%3E%3Cg transform='translate(80,140) rotate(10)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='5'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M15,0 L15,6 M15,24 L15,30 M0,15 L6,15 M24,15 L30,15'/%3E%3C/g%3E%3C!-- Coffee Cup --%3E%3Cg transform='translate(180,135) rotate(-6)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M6,10 L6,24 Q6,28 10,28 L20,28 Q24,28 24,24 L24,10 Z'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='5' y1='10' x2='25' y2='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,4 Q12,6 10,8 M15,4 Q17,6 15,8 M20,4 Q22,6 20,8'/%3E%3C/g%3E%3C!-- Handshake --%3E%3Cg transform='translate(270,140) rotate(4)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M2,18 L8,18 L13,13 L18,18 L24,18 M8,18 L8,12 L2,12 M24,18 L24,12 L30,12'/%3E%3C/g%3E%3C!-- Bar Chart --%3E%3Cg transform='translate(40,240) rotate(-7)'%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='2' y='18' width='5' height='12'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='10' y='12' width='5' height='18'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='18' y='6' width='5' height='24'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='26' y='14' width='5' height='16'/%3E%3C/g%3E%3C!-- Target --%3E%3Cg transform='translate(140,245) rotate(8)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='12'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='7'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='2'/%3E%3C/g%3E%3C!-- Trending Arrow --%3E%3Cg transform='translate(240,240) rotate(6)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='2,22 10,14 15,19 28,6'/%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='20,6 28,6 28,14'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat,
         radial-gradient(circle at 25% 30%, rgba(255, 111, 0, 0.08) 0%, transparent 50%),
         radial-gradient(circle at 75% 70%, rgba(211, 47, 47, 0.06) 0%, transparent 50%),
         radial-gradient(circle at 50% 50%, rgba(255, 160, 0, 0.05) 0%, transparent 70%),
@@ -2751,7 +2733,10 @@ html, body {
 .contact-section {
     position: relative;
     padding: 120px 0;
-    background: var(--gradient-about);
+    /* Layered background: SVG texture + gradient */
+    background: 
+        url("data:image/svg+xml,%3Csvg width='350' height='350' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.35'%3E%3C!-- Graph Chart --%3E%3Cg transform='translate(40,40) rotate(5)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='0,20 6,14 12,18 18,8 24,12 30,4'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='26' x2='30' y2='26'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='0' x2='0' y2='26'/%3E%3C/g%3E%3C!-- Dollar Sign --%3E%3Cg transform='translate(130,35) rotate(-8)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M18,6 Q24,6 24,12 Q24,18 18,18 L12,18 Q6,18 6,24 Q6,30 12,30 L18,30'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='0' x2='15' y2='36'/%3E%3C/g%3E%3C!-- Lightbulb --%3E%3Cg transform='translate(230,40) rotate(3)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='12' r='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,22 L10,26 L20,26 L20,22'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='2' x2='15' y2='0'/%3E%3C/g%3E%3C!-- Rocket --%3E%3Cg transform='translate(300,45) rotate(-5)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M15,2 L15,22 M15,2 L10,10 L15,7 L20,10 Z'/%3E%3Cellipse fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='25' rx='8' ry='4'/%3E%3C/g%3E%3C!-- Gear --%3E%3Cg transform='translate(80,140) rotate(10)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='5'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M15,0 L15,6 M15,24 L15,30 M0,15 L6,15 M24,15 L30,15'/%3E%3C/g%3E%3C!-- Coffee Cup --%3E%3Cg transform='translate(180,135) rotate(-6)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M6,10 L6,24 Q6,28 10,28 L20,28 Q24,28 24,24 L24,10 Z'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='5' y1='10' x2='25' y2='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,4 Q12,6 10,8 M15,4 Q17,6 15,8 M20,4 Q22,6 20,8'/%3E%3C/g%3E%3C!-- Handshake --%3E%3Cg transform='translate(270,140) rotate(4)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M2,18 L8,18 L13,13 L18,18 L24,18 M8,18 L8,12 L2,12 M24,18 L24,12 L30,12'/%3E%3C/g%3E%3C!-- Bar Chart --%3E%3Cg transform='translate(40,240) rotate(-7)'%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='2' y='18' width='5' height='12'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='10' y='12' width='5' height='18'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='18' y='6' width='5' height='24'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='26' y='14' width='5' height='16'/%3E%3C/g%3E%3C!-- Target --%3E%3Cg transform='translate(140,245) rotate(8)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='12'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='7'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='2'/%3E%3C/g%3E%3C!-- Trending Arrow --%3E%3Cg transform='translate(240,240) rotate(6)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='2,22 10,14 15,19 28,6'/%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='20,6 28,6 28,14'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat,
+        var(--gradient-about);
     overflow: visible;
 }
 
