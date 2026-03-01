@@ -1765,7 +1765,8 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     width: 300px;
-    height: 1800px;
+    height: 100%;
+    min-height: 2000px;
     z-index: 2;
     pointer-events: none;
 }
@@ -2102,6 +2103,10 @@ html, body {
         max-width: 600px;
         margin: 0 auto;
     }
+
+    .journey-road-wrapper {
+        padding: 40px 0 80px;
+    }
     
     .checkpoint-content {
         flex-direction: column !important;
@@ -2140,9 +2145,15 @@ html, body {
         margin-bottom: 60px;
     }
 
+    .journey-road-wrapper {
+        padding: 20px 0 100px;
+        min-height: 2000px;
+    }
+
     .journey-road {
-        width: 250px;
-        height: 950px;
+        width: 280px;
+        height: 100%;
+        min-height: 1800px;
     }
 
     .checkpoint {
@@ -2194,13 +2205,23 @@ html, body {
         margin-bottom: 50px;
     }
 
+    .journey-road-wrapper {
+        padding: 20px 0 80px;
+        min-height: 1800px;
+    }
+
     .journey-road {
-        width: 220px;
-        height: 900px;
+        width: 260px;
+        height: 100%;
+        min-height: 1600px;
     }
 
     .checkpoint {
-        margin-bottom: 160px;
+        margin-bottom: 140px;
+    }
+
+    .checkpoint:last-child {
+        margin-bottom: 140px;
     }
 
     .signboard {

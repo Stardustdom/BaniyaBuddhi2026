@@ -48,6 +48,21 @@ function initTimelineAnimations() {
     
     if (!roadProgress || !checkpoints.length || !timelineSection) return;
 
+    // Set initial dasharray based on screen size
+    function getPathLength() {
+        if (window.innerWidth <= 480) {
+            return 2400;
+        } else if (window.innerWidth <= 768) {
+            return 2400;
+        }
+        return 2500; // Desktop
+    }
+
+    // Initialize with correct dasharray
+    const initialPathLength = getPathLength();
+    roadProgress.style.strokeDasharray = initialPathLength;
+    roadProgress.style.strokeDashoffset = initialPathLength;
+
     // IntersectionObserver for Checkpoints and Markers
     const checkpointObserver = new IntersectionObserver(
         (entries) => {
@@ -109,12 +124,14 @@ function initTimelineAnimations() {
         // Apply smooth easing for more organic animation
         progress = easeInOutCubic(progress);
         
-        // Total path length for the curved road (updated for new path)
-        const pathLength = 2200;
+        // Total path length for the curved road - responsive based on screen size
+        const pathLength = getPathLength();
+        
         const dashOffset = pathLength - (pathLength * progress);
         
         // Update stroke-dashoffset for road progress
         roadProgress.style.strokeDashoffset = dashOffset;
+        roadProgress.style.strokeDasharray = pathLength;
         
         animationFrame = null;
     }
@@ -139,11 +156,15 @@ function initTimelineAnimations() {
     // Initial update on page load
     updateRoadProgress();
 
-    // Update on window resize
+    // Update on window resize with debounce
+    let resizeTimeout;
     window.addEventListener('resize', () => {
-        if (!animationFrame) {
-            animationFrame = requestAnimationFrame(updateRoadProgress);
-        }
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            if (!animationFrame) {
+                animationFrame = requestAnimationFrame(updateRoadProgress);
+            }
+        }, 150);
     }, { passive: true });
 }
 
