@@ -2266,6 +2266,484 @@ html, body {
 /* ==========================================
    END OF TIMELINE SECTION
 ========================================== */
+
+/* ==========================================
+   ABOUT THE STARTUP CLUB SECTION
+   Premium Two-Column Layout with Logo Frame
+========================================== */
+
+.startup-club-section {
+    padding: 120px 8%;
+    position: relative;
+    overflow: hidden;
+    
+    /* Warm layered carnival gradient */
+    background: 
+        radial-gradient(circle at 25% 30%, rgba(255, 111, 0, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 75% 70%, rgba(211, 47, 47, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 160, 0, 0.05) 0%, transparent 70%),
+        linear-gradient(170deg, 
+            #FFF8E7 0%, 
+            #F5E6D3 25%, 
+            #FFE8CC 50%, 
+            #F5D9B5 75%, 
+            #E8D5B7 100%);
+    
+    border-top: 2px solid rgba(255, 224, 178, 0.6);
+    border-bottom: 2px solid rgba(255, 224, 178, 0.6);
+}
+
+/* Subtle texture overlay */
+.startup-club-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 4px, rgba(139, 111, 61, 0.015) 4px, rgba(139, 111, 61, 0.015) 8px),
+        repeating-linear-gradient(90deg, transparent, transparent 4px, rgba(139, 111, 61, 0.015) 4px, rgba(139, 111, 61, 0.015) 8px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+/* Decorative glow accents */
+.startup-club-section::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, 
+        rgba(255, 138, 101, 0.08) 0%, 
+        rgba(255, 160, 0, 0.05) 35%,
+        transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(60px);
+}
+
+.startup-club-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+/* Section Heading with Decorative Underline */
+.club-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(36px, 5.5vw, 58px);
+    font-weight: 800;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 80px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 12px rgba(139, 111, 61, 0.2);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Warm gradient decorative underline */
+.club-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--accent-orange) 15%,
+        var(--accent-red) 35%,
+        var(--accent-gold) 50%,
+        var(--accent-red) 65%,
+        var(--accent-orange) 85%,
+        transparent 100%);
+    border-radius: 10px;
+    box-shadow: 
+        0 2px 12px rgba(255, 111, 0, 0.5),
+        0 0 25px rgba(211, 47, 47, 0.3);
+}
+
+/* Diamond accent on underline */
+.club-heading::before {
+    content: "◆";
+    position: absolute;
+    bottom: -33px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    color: var(--accent-red);
+    text-shadow: 0 0 10px rgba(255, 111, 0, 0.6);
+    z-index: 2;
+}
+
+/* ===========================
+   TWO-COLUMN GRID LAYOUT
+=========================== */
+
+.club-content-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 100px;
+}
+
+/* ===========================
+   TEXT CONTENT AREA (LEFT)
+=========================== */
+
+.club-text-area {
+    padding-right: 40px;
+}
+
+.club-description {
+    font-size: clamp(18px, 2.2vw, 24px);
+    line-height: 1.9;
+    color: var(--text-dark);
+    font-weight: 400;
+    text-align: justify;
+    position: relative;
+    padding: 0;
+}
+
+/* Highlighted Key Phrases */
+.highlight-text {
+    color: var(--accent-red);
+    font-weight: 600;
+    font-style: italic;
+    position: relative;
+    text-shadow: 0 1px 3px rgba(211, 47, 47, 0.2);
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        transparent 65%, 
+        rgba(255, 111, 0, 0.15) 65%, 
+        rgba(255, 111, 0, 0.15) 100%);
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+/* Brand Highlight */
+.highlight-brand {
+    font-family: var(--font-heading);
+    color: var(--accent-orange);
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    text-shadow: 
+        0 2px 6px rgba(255, 111, 0, 0.3),
+        0 0 12px rgba(255, 111, 0, 0.2);
+    background: linear-gradient(180deg, 
+        transparent 0%, 
+        transparent 60%, 
+        rgba(211, 47, 47, 0.12) 60%, 
+        rgba(211, 47, 47, 0.12) 100%);
+    padding: 2px 6px;
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+}
+
+.highlight-brand::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        var(--accent-orange), 
+        var(--accent-red));
+    border-radius: 2px;
+    opacity: 0.6;
+}
+
+/* ===========================
+   LOGO AREA (RIGHT)
+=========================== */
+
+.club-logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+}
+
+/* Premium Logo Frame */
+.logo-premium-frame {
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(135deg, 
+        rgba(245, 230, 211, 0.95) 0%, 
+        rgba(255, 248, 231, 0.98) 100%);
+    border-radius: 30px;
+    border: 3px solid var(--beige-rich);
+    box-shadow: 
+        0 8px 32px rgba(139, 111, 61, 0.25),
+        0 4px 16px rgba(107, 85, 48, 0.15),
+        inset 0 2px 0 rgba(255, 255, 255, 0.4),
+        inset 0 -2px 0 rgba(139, 111, 61, 0.2);
+    transition: var(--transition-bounce);
+    overflow: hidden;
+}
+
+/* Frame decorative border pattern */
+.logo-premium-frame::before {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    border: 2px solid rgba(201, 169, 97, 0.3);
+    border-radius: 24px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Inner frame container */
+.frame-inner {
+    position: relative;
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.6) 0%, 
+        rgba(255, 248, 231, 0.4) 100%);
+    border-radius: 20px;
+    padding: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: var(--transition-smooth);
+}
+
+/* Logo Image */
+.club-logo-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 4px 12px rgba(139, 111, 61, 0.15));
+    transition: var(--transition-bounce);
+}
+
+/* ===========================
+   HOVER EFFECTS
+=========================== */
+
+/* Frame hover: Soft orange/red glow */
+.logo-premium-frame:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-orange);
+    box-shadow: 
+        0 12px 48px rgba(255, 111, 0, 0.35),
+        0 6px 24px rgba(211, 47, 47, 0.25),
+        0 0 40px rgba(255, 111, 0, 0.2),
+        inset 0 2px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -2px 0 rgba(255, 111, 0, 0.25);
+}
+
+/* Logo scale on hover */
+.logo-premium-frame:hover .club-logo-image {
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 20px rgba(255, 111, 0, 0.3));
+}
+
+/* Inner frame glow on hover */
+.logo-premium-frame:hover .frame-inner {
+    background: linear-gradient(135deg, 
+        rgba(255, 248, 231, 0.8) 0%, 
+        rgba(255, 243, 224, 0.6) 100%);
+}
+
+/* Animated shimmer effect on hover */
+.logo-premium-frame::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 160, 0, 0.15) 50%,
+        transparent 70%
+    );
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.logo-premium-frame:hover::after {
+    opacity: 1;
+    animation: shimmer-rotate 2s linear infinite;
+}
+
+@keyframes shimmer-rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+=========================== */
+
+/* Tablets and below */
+@media (max-width: 1024px) {
+    .startup-club-section {
+        padding: 100px 6%;
+    }
+
+    .club-content-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        margin-top: 80px;
+    }
+
+    .club-text-area {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .club-description {
+        text-align: center;
+    }
+
+    .club-logo-area {
+        order: 2;
+        padding: 20px;
+    }
+
+    .frame-inner {
+        padding: 50px;
+    }
+
+    .club-logo-image {
+        max-width: 300px;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .startup-club-section {
+        padding: 80px 5%;
+    }
+
+    .club-heading {
+        font-size: clamp(28px, 7vw, 36px);
+        margin-bottom: 60px;
+        letter-spacing: 2px;
+    }
+
+    .club-heading::after {
+        width: 160px;
+        height: 5px;
+        bottom: -15px;
+    }
+
+    .club-heading::before {
+        bottom: -27px;
+        font-size: 12px;
+    }
+
+    .club-content-grid {
+        gap: 50px;
+        margin-top: 60px;
+    }
+
+    .club-description {
+        font-size: clamp(16px, 4vw, 18px);
+        line-height: 1.8;
+        text-align: left;
+    }
+
+    .frame-inner {
+        padding: 40px 30px;
+    }
+
+    .club-logo-image {
+        max-width: 250px;
+    }
+
+    .logo-premium-frame {
+        padding: 15px;
+        border-radius: 25px;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+    .startup-club-section {
+        padding: 60px 4%;
+    }
+
+    .club-heading {
+        font-size: clamp(24px, 8vw, 30px);
+        margin-bottom: 50px;
+    }
+
+    .club-heading::after {
+        width: 120px;
+        height: 4px;
+    }
+
+    .club-content-grid {
+        gap: 40px;
+        margin-top: 50px;
+    }
+
+    .club-text-area {
+        padding-right: 0;
+    }
+
+    .club-description {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .highlight-brand {
+        font-size: 1.05em;
+    }
+
+    .frame-inner {
+        padding: 30px 20px;
+    }
+
+    .club-logo-image {
+        max-width: 200px;
+    }
+
+    .logo-premium-frame {
+        padding: 12px;
+        border-radius: 20px;
+        border-width: 2px;
+    }
+
+    .logo-premium-frame::before {
+        top: 6px;
+        left: 6px;
+        right: 6px;
+        bottom: 6px;
+        border-width: 1.5px;
+    }
+}
+
+/* ==========================================
+   END OF STARTUP CLUB SECTION
+========================================== */
+
 /* ==========================================
    CONTACT US SECTION - Postage Stamp Design
 ========================================== */
