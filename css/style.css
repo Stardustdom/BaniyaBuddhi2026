@@ -1,11 +1,150 @@
+/* ==========================================
+   ENERGETIC CARNIVAL DESIGN SYSTEM
+   Festive Startup Mela Palette
+========================================== */
+
 :root {
-    --accent-red: #e10600;     /* clean modern red */
+    /* Primary Brand Colors - Enhanced Energy */
+    --accent-red: #D32F2F;
+    --accent-red-hover: #F44336;
+    --accent-red-light: rgba(211, 47, 47, 0.1);
+    --accent-red-glow: rgba(211, 47, 47, 0.4);
+    --accent-orange: #FF6F00;
+    --accent-orange-bright: #FF8F00;
+    --accent-gold: #FFA000;
+    
+    /* Warm Carnival Palette */
+    --cream-light: #FFF8E7;
+    --cream-base: #F5E6D3;
+    --cream-medium: #E8D5B7;
+    --beige-warm: #D4B883;
+    --beige-rich: #C9A961;
+    --brown-soft: #8B6F3D;
+    --brown-deep: #6B5530;
+    --brown-dark: #4A3C28;
+    
+    /* Neutral Tones */
+    --text-dark: #2A2520;
+    --text-medium: #5A4F45;
+    --text-light: #8A7F75;
+    --white-warm: #FFFBF5;
+    
+    /* Energetic Gradient Definitions */
+    --gradient-hero: linear-gradient(135deg, var(--cream-light) 0%, var(--cream-medium) 100%);
+    --gradient-about: 
+        radial-gradient(circle at 15% 20%, rgba(255, 183, 77, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(255, 138, 101, 0.12) 0%, transparent 50%),
+        linear-gradient(160deg, #FFE8CC 0%, #F5D9B5 25%, #E8C89F 75%, #D4B883 100%);
+    --gradient-gallery: 
+        radial-gradient(circle at 80% 30%, rgba(255, 160, 0, 0.18) 0%, transparent 50%),
+        radial-gradient(circle at 20% 70%, rgba(255, 111, 0, 0.15) 0%, transparent 50%),
+        linear-gradient(200deg, #FFF3E0 0%, #FFE0B2 30%, #FFCC80 70%, #FFB74D 100%);
+    --gradient-footer: linear-gradient(135deg, #8B6F3D 0%, #6B5530 50%, #4A3C28 100%);
+    --gradient-card: linear-gradient(135deg, rgba(255, 248, 231, 0.95) 0%, rgba(245, 230, 211, 0.9) 100%);
+    
+    /* Carnival CTA Gradients */
+    --gradient-cta: linear-gradient(135deg, #D32F2F 0%, #FF6F00 100%);
+    --gradient-cta-hover: linear-gradient(135deg, #F44336 0%, #FF8F00 100%);
+    
+    /* Enhanced Shadows with Glow */
+    --shadow-sm: 0 2px 8px rgba(139, 111, 61, 0.08);
+    --shadow-md: 0 4px 16px rgba(139, 111, 61, 0.12);
+    --shadow-lg: 0 8px 32px rgba(139, 111, 61, 0.16);
+    --shadow-xl: 0 12px 48px rgba(139, 111, 61, 0.24);
+    --shadow-glow: 0 0 30px rgba(255, 111, 0, 0.3);
+    --shadow-glow-strong: 0 0 40px rgba(255, 111, 0, 0.5);
+    
+    /* Typography */
+    --font-main: 'Space Grotesk', sans-serif;
+    --font-heading: 'Orbitron', sans-serif;
+    
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-spring: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-:root {
-    --hamburger-color: #ffffff;
+
+/* ==========================================
+   FESTIVE DECORATIVE PATTERNS
+========================================== */
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    33% { transform: translateY(-15px) rotate(2deg); }
+    66% { transform: translateY(-8px) rotate(-1deg); }
 }
-.hamburger i {
-    color: #ffffff !important;
+
+@keyframes pulse-glow {
+    0%, 100% { 
+        box-shadow: 0 0 20px rgba(255, 111, 0, 0.3),
+                    0 0 40px rgba(255, 111, 0, 0.15);
+    }
+    50% { 
+        box-shadow: 0 0 30px rgba(255, 111, 0, 0.5),
+                    0 0 60px rgba(255, 111, 0, 0.25);
+    }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% center; }
+    100% { background-position: 200% center; }
+}
+
+@keyframes rotate-subtle {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+}
+
+/* ==========================================
+   DECORATIVE CARNIVAL ELEMENTS (Optional)
+   Add these classes to decorative HTML elements
+========================================== */
+
+.carnival-sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, 
+        var(--accent-orange) 0%, 
+        transparent 70%);
+    border-radius: 50%;
+    animation: float 4s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.carnival-dot-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: 
+        radial-gradient(circle, rgba(255, 111, 0, 0.08) 1px, transparent 1px);
+    background-size: 30px 30px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.energy-pulse {
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Section decorative accents */
+.section-accent-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        var(--accent-orange) 25%,
+        var(--accent-gold) 50%,
+        var(--accent-orange) 75%,
+        transparent 100%);
+    box-shadow: 0 2px 15px rgba(255, 111, 0, 0.4);
 }
 html, body {
     margin: 0;
@@ -85,7 +224,9 @@ p {
     transition: opacity 1.2s ease;
 }
 
-/* NAVBAR */
+/* ==========================================
+   NAVBAR - Warm Carnival Premium
+========================================== */
 
 .navbar {
     position: fixed;
@@ -94,22 +235,35 @@ p {
     transform: translateX(-50%);
     z-index: 1000;
 
-    width: 95%;          /* increase this */
-    max-width: 1200px; 
-    height:10%;
+    width: 95%;
+    max-width: 1200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    padding: 14px 40px;
+    padding: 16px 40px;
 
-    background: rgba(18, 18, 18, 0.65);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    /* Warm glass morphism */
+    background: linear-gradient(135deg, 
+        rgba(139, 111, 61, 0.85) 0%, 
+        rgba(107, 85, 48, 0.90) 100%);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
 
     border-radius: 999px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border: 1.5px solid rgba(255, 248, 231, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(74, 60, 40, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+    
+    transition: var(--transition-smooth);
+}
+
+.navbar:hover {
+    box-shadow: 
+        0 12px 40px rgba(74, 60, 40, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 248, 231, 0.3);
 }
 /* =========================
    HAMBURGER ANIMATION
@@ -121,6 +275,15 @@ p {
     gap: 5px;
     cursor: pointer;
     z-index: 1100;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: var(--white-warm);
+    border-radius: 2px;
+    transition: var(--transition-smooth);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -143,11 +306,12 @@ p {
 ========================= */
 
 .logo {
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 15px;
-    letter-spacing: 1px;
-    color: #ffffff;
+    letter-spacing: 1.5px;
+    color: var(--white-warm);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* =========================
@@ -160,39 +324,83 @@ p {
 }
 
 .nav-links a {
-    color: #cfcfcf;
+    color: var(--cream-light);
     text-decoration: none;
     margin-left: 28px;
     font-size: 14px;
     font-weight: 500;
-    transition: 0.3s ease;
+    transition: var(--transition-smooth);
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--white-warm);
+    transition: var(--transition-smooth);
 }
 
 .nav-links a:hover {
-    color: #e10600;
+    color: var(--white-warm);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* =========================
-   REGISTER BUTTON
+   REGISTER BUTTON - Carnival Energy
 ========================= */
 
 .register-btn {
-    padding: 8px 20px;
+    padding: 11px 28px;
     border-radius: 999px;
-    background: #e10600;
-    color: #ffffff !important;
+    background: var(--gradient-cta);
+    color: var(--white-warm) !important;
     font-weight: 600;
     margin-left: 28px;
-    transition: 0.3s ease;
+    transition: var(--transition-smooth);
+    box-shadow: 
+        0 4px 16px rgba(211, 47, 47, 0.4),
+        0 0 20px rgba(255, 111, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer effect */
+.register-btn::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.3) 50%,
+        transparent 70%
+    );
+    animation: shimmer 3s infinite;
+}
+
+.register-btn::after {
+    display: none;
 }
 
 .register-btn:hover {
-    background: #ff1a1a;
+    background: var(--gradient-cta-hover);
+    box-shadow: 
+        0 6px 24px rgba(211, 47, 47, 0.5),
+        0 0 35px rgba(255, 111, 0, 0.4);
+    transform: translateY(-3px) scale(1.05);
+    animation: pulse-glow 2s ease-in-out infinite;
 }
-
-/* =========================
-   HAMBURGER
-========================= */
 
 
 /* =========================
@@ -202,30 +410,38 @@ p {
 .side-menu {
     position: fixed;
     top: 0;
-    right: -260px;
-    width: 250px;
+    right: -280px;
+    width: 270px;
     height: 100%;
 
-    background: rgba(18, 18, 18, 0.95);
-    backdrop-filter: blur(20px);
+    background: linear-gradient(180deg, 
+        rgba(139, 111, 61, 0.97) 0%, 
+        rgba(107, 85, 48, 0.98) 100%);
+    backdrop-filter: blur(24px);
 
     display: flex;
     flex-direction: column;
     padding: 100px 30px;
     gap: 20px;
 
-    transition: 0.3s ease;
+    transition: var(--transition-smooth);
     z-index: 999;
+    box-shadow: -4px 0 24px rgba(74, 60, 40, 0.3);
+    border-left: 1px solid rgba(255, 248, 231, 0.15);
 }
 
 .side-menu a {
-    color: #ffffff;
+    color: var(--cream-light);
     text-decoration: none;
     font-size: 16px;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+    padding: 8px 0;
 }
 
 .side-menu a:hover {
-    color: #e10600;
+    color: var(--white-warm);
+    padding-left: 8px;
 }
 
 .side-menu.active {
@@ -240,7 +456,7 @@ p {
 
     .navbar {
         width: 90%;
-        padding: 12px 25px;
+        padding: 14px 25px;
     }
 
     .nav-links {
@@ -265,7 +481,7 @@ p {
 }
 
 /* =========================
-   ABOUT SECTION
+   ABOUT SECTION - Enhanced Gradient
 ========================= */
 
 .about-section {
@@ -276,9 +492,10 @@ p {
     padding: 100px 8%;
     position: relative;
     overflow: hidden;
+    border-top: 2px solid rgba(255, 224, 178, 0.5);
 }
 
-/* Subtle transparent overlay with poster colors */
+/* Multi-layered warm gradient overlay - MORE CONTRAST */
 .about-section::before {
     content: "";
     position: absolute;
@@ -286,13 +503,25 @@ p {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(212, 184, 131, 0.85);
+    background: var(--gradient-about);
     pointer-events: none;
+    z-index: 0;
 }
 
-/* Decorative elements removed for cleaner look */
+/* Subtle mesh texture overlay */
 .about-section::after {
-    content: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(139, 111, 61, 0.02) 3px, rgba(139, 111, 61, 0.02) 6px),
+        repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(139, 111, 61, 0.02) 3px, rgba(139, 111, 61, 0.02) 6px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
 }
 
 .about-header {
@@ -300,7 +529,7 @@ p {
     align-items: center;
     justify-content: center;
     gap: 30px;
-    margin-bottom: 60px;
+    margin-bottom: 0;
     position: relative;
     z-index: 1;
 }
@@ -308,7 +537,7 @@ p {
 .header-line {
     width: 200px;
     height: 3px;
-    background: #1a1a1a;
+    background: var(--brown-soft);
     position: relative;
 }
 
@@ -319,7 +548,7 @@ p {
     left: 0;
     width: 100%;
     height: 7px;
-    background: #1a1a1a;
+    background: var(--brown-soft);
     opacity: 0.3;
 }
 
@@ -330,19 +559,20 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 12px;
-    color: #1a1a1a;
-    background: rgba(212, 184, 131, 0.9);
+    color: var(--brown-dark);
+    background: var(--cream-base);
     padding: 5px;
 }
 
 .about-title {
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(32px, 5vw, 56px);
     font-weight: 700;
-    color: #1a1a1a;
+    color: var(--text-dark);
     letter-spacing: 3px;
     margin: 0;
     text-align: center;
+    text-shadow: 2px 2px 8px rgba(139, 111, 61, 0.15);
 }
 
 .about-content {
@@ -353,14 +583,37 @@ p {
 }
 
 .story-heading {
-    font-family: 'Orbitron', sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(36px, 6vw, 64px);
     font-weight: 800;
-    color: #1a1a1a;
-    margin-bottom: 30px;
+    color: var(--text-dark);
+    margin-bottom: 40px;
     letter-spacing: 4px;
     text-transform: uppercase;
     text-align: center;
+    text-shadow: 3px 3px 12px rgba(139, 111, 61, 0.2);
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Decorative Underline with Carnival Energy */
+.story-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 5px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--accent-orange) 20%,
+        var(--accent-red) 50%,
+        var(--accent-orange) 80%,
+        transparent 100%);
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(255, 111, 0, 0.4);
 }
 
 .event-tagline {
@@ -368,19 +621,28 @@ p {
     font-size: clamp(32px, 5vw, 56px);
     font-weight: 700;
     font-style: italic;
-    color: #1a1a1a;
+    color: var(--accent-red);
     margin-bottom: 30px;
     letter-spacing: 2px;
+    text-shadow: 
+        2px 2px 8px rgba(211, 47, 47, 0.3),
+        0 0 15px rgba(255, 111, 0, 0.15);
+    position: relative;
 }
 
 .about-description {
     font-size: clamp(16px, 2vw, 20px);
     line-height: 1.8;
-    color: #2a2a2a;
+    color: var(--text-dark);
     margin-bottom: 60px;
     font-weight: 400;
     max-width: 900px;
+    position: relative;
 }
+
+/* =========================
+   FEATURE CARDS - Premium Refined
+========================= */
 
 .features-container {
     display: grid;
@@ -390,30 +652,47 @@ p {
 }
 
 .feature-box {
-    background: rgba(232, 213, 163, 0.75);
-    backdrop-filter: blur(8px);
-    border: 3px solid #1a1a1a;
+    background: var(--gradient-card);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 111, 61, 0.15);
+    border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
     position: relative;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 
-        0 4px 6px rgba(0,0,0,0.1),
-        inset 0 1px 0 rgba(255,255,255,0.4);
+    transition: var(--transition-bounce);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    animation: float 6s ease-in-out infinite;
 }
 
+/* Stagger floating animation for each card */
+.feature-box:nth-child(1) { animation-delay: 0s; }
+.feature-box:nth-child(2) { animation-delay: 0.5s; }
+.feature-box:nth-child(3) { animation-delay: 1s; }
+.feature-box:nth-child(4) { animation-delay: 1.5s; }
+
+/* Energetic shimmer effect */
 .feature-box::before {
     content: "";
     position: absolute;
-    top: -8px;
-    left: -8px;
-    right: -8px;
-    bottom: -8px;
-    border: 2px solid #1a1a1a;
-    pointer-events: none;
-    transition: all 0.4s ease;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 160, 0, 0.2),
+        rgba(255, 111, 0, 0.3), 
+        rgba(255, 160, 0, 0.2),
+        transparent);
+    transition: left 0.7s ease;
 }
 
+.feature-box:hover::before {
+    left: 100%;
+}
+
+/* Carnival glow on hover */
 .feature-box::after {
     content: "";
     position: absolute;
@@ -422,32 +701,27 @@ p {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(201, 169, 97, 0.2);
+    background: radial-gradient(circle, 
+        rgba(255, 160, 0, 0.2) 0%, 
+        rgba(255, 111, 0, 0.1) 50%,
+        transparent 70%);
     transform: translate(-50%, -50%);
-    transition: width 0.4s ease, height 0.4s ease;
+    transition: width 0.5s ease, height 0.5s ease;
     z-index: 0;
 }
 
 .feature-box:hover {
-    transform: translateY(-12px) scale(1.02);
-    background: rgba(232, 213, 163, 0.9);
+    transform: translateY(-12px) scale(1.05) rotate(2deg);
     box-shadow: 
-        0 12px 24px rgba(0,0,0,0.2),
-        inset 0 1px 0 rgba(255,255,255,0.6),
-        0 0 30px rgba(201,169,97,0.4);
-}
-
-.feature-box:hover::before {
-    top: -12px;
-    left: -12px;
-    right: -12px;
-    bottom: -12px;
-    border-width: 3px;
+        var(--shadow-xl),
+        0 0 30px rgba(255, 111, 0, 0.2);
+    border-color: rgba(255, 111, 0, 0.3);
+    animation-play-state: paused;
 }
 
 .feature-box:hover::after {
-    width: 100%;
-    height: 100%;
+    width: 400px;
+    height: 400px;
 }
 
 .feature-icon {
@@ -459,60 +733,83 @@ p {
     justify-content: center;
     position: relative;
     z-index: 1;
-    transition: transform 0.4s ease;
+    transition: var(--transition-spring);
 }
 
 .feature-box:hover .feature-icon {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.15) rotate(-8deg);
 }
 
 .feature-icon svg {
     width: 100%;
     height: 100%;
-    stroke: #1a1a1a;
-    stroke-width: 1.5;
-    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
-    transition: all 0.4s ease;
+    stroke: var(--brown-soft);
+    stroke-width: 1.8;
+    filter: drop-shadow(2px 2px 6px rgba(139, 111, 61, 0.2));
+    transition: var(--transition-smooth);
 }
 
 .feature-box:hover .feature-icon svg {
-    stroke: #c9a961;
-    filter: drop-shadow(0 0 8px rgba(201,169,97,0.6));
+    stroke: var(--accent-orange);
+    filter: 
+        drop-shadow(0 0 15px rgba(255, 111, 0, 0.5))
+        drop-shadow(0 0 8px rgba(255, 160, 0, 0.3));
+    animation: pulse-glow 2s ease-in-out infinite;
 }
 
 .feature-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 18px;
+    font-family: var(--font-main);
+    font-size: 17px;
     font-weight: 600;
-    color: #1a1a1a;
-    letter-spacing: 2px;
+    color: var(--text-dark);
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     margin: 0 0 10px 0;
     position: relative;
     z-index: 1;
-    transition: color 0.3s ease;
+    transition: var(--transition-smooth);
+}
+
+/* Decorative accent on hover */
+.feature-title::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        var(--accent-red), 
+        var(--accent-orange));
+    transition: width 0.4s ease;
 }
 
 .feature-box:hover .feature-title {
-    color: #8b6f3d;
+    color: var(--accent-red);
+    text-shadow: 0 0 10px rgba(255, 111, 0, 0.3);
+}
+
+.feature-box:hover .feature-title::after {
+    width: 80%;
 }
 
 .feature-desc {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: var(--font-main);
     font-size: 14px;
     font-weight: 400;
-    color: #3a3a3a;
+    color: var(--text-medium);
     margin: 0;
     font-style: italic;
     position: relative;
     z-index: 1;
-    transition: color 0.3s ease;
+    transition: var(--transition-smooth);
 }
 
 .feature-box:hover .feature-desc {
-    color: #2a2a2a;
+    color: var(--text-dark);
+    font-weight: 500;
 }
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .about-section {
@@ -557,19 +854,65 @@ p {
 
 
 
+/* =========================
+   CTA BUTTON - Energetic Carnival Style
+========================= */
+
 .cta{
     margin-top:30px;
-    padding:15px 30px;
-    border-radius:40px;
-    background:rgba(255,255,255,0.15);
+    padding:18px 40px;
+    border-radius:999px;
+    background: var(--gradient-cta);
     text-decoration:none;
-    color:white;
+    color: var(--white-warm);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    box-shadow: 
+        0 6px 20px rgba(211, 47, 47, 0.4),
+        0 0 30px rgba(255, 111, 0, 0.3);
+    transition: var(--transition-spring);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Animated shimmer overlay */
+.cta::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 70%
+    );
+    animation: shimmer 3s infinite;
+}
+
+/* Pulsing glow effect */
+.cta:hover {
+    background: var(--gradient-cta-hover);
+    box-shadow: 
+        0 8px 32px rgba(211, 47, 47, 0.6),
+        0 0 50px rgba(255, 111, 0, 0.5),
+        0 0 80px rgba(255, 160, 0, 0.3);
+    transform: translateY(-4px) scale(1.08);
+    animation: pulse-glow 2s ease-in-out infinite;
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 /* ORGANIZER PAGE */
 .organizer-section{
     padding-top:120px;
     text-align:center;
+    background: var(--gradient-about);
+    min-height: 100vh;
 }
 
 .organizer-container{
@@ -578,20 +921,48 @@ p {
     gap:40px;
     flex-wrap:wrap;
     margin-top:40px;
+    padding: 40px 8%;
 }
 
 .glass-tile{
     width:220px;
-    padding:20px;
+    padding:30px 25px;
     border-radius:20px;
-    backdrop-filter:blur(15px);
-    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(20px);
+    background: var(--gradient-card);
+    border: 1px solid rgba(139, 111, 61, 0.15);
     cursor:pointer;
-    transition:0.3s;
+    transition: var(--transition-bounce);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shimmer effect on hover */
+.glass-tile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(255, 160, 0, 0.2), 
+        transparent);
+    transition: left 0.6s ease;
+}
+
+.glass-tile:hover::before {
+    left: 100%;
 }
 
 .glass-tile:hover{
-    transform:translateY(-10px);
+    transform:translateY(-14px) rotate(2deg);
+    box-shadow: 
+        var(--shadow-xl),
+        0 0 30px rgba(255, 111, 0, 0.2);
+    border-color: rgba(255, 111, 0, 0.3);
 }
 
 .glass-tile img{
@@ -599,6 +970,17 @@ p {
     height:100px;
     border-radius:50%;
     object-fit:cover;
+    border: 3px solid rgba(139, 111, 61, 0.2);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-smooth);
+}
+
+.glass-tile:hover img {
+    border-color: var(--accent-orange);
+    box-shadow: 
+        var(--shadow-lg),
+        0 0 20px rgba(255, 111, 0, 0.3);
+    transform: scale(1.05);
 }
 
 /* Notification */
@@ -606,10 +988,12 @@ p {
     position:fixed;
     bottom:30px;
     right:30px;
-    padding:15px 25px;
-    border-radius:20px;
-    backdrop-filter:blur(15px);
-    background:rgba(255,255,255,0.15);
+    padding:18px 28px;
+    border-radius:16px;
+    backdrop-filter:blur(20px);
+    background: var(--gradient-card);
+    border: 1px solid rgba(139, 111, 61, 0.2);
+    box-shadow: var(--shadow-lg);
     animation:fadeOut 6s forwards;
 }
 
@@ -631,45 +1015,67 @@ p {
     .nav-links{display:none;}
     .hamburger{display:flex;}
 }
-/* ================= FOOTER ================= */
-/* Hide main content initially */
-
-#mainContent {
-    margin: 0;
-    padding: 0;
-}
-/* ================= FOOTER ================= */
+/* ==========================================
+   FOOTER - Warm Carnival Theme with Divider
+========================================== */
 
 .footer {
     margin-top: 0;
-    padding: 60px 8% 25px;
-    background: #1a1a1a !important;
-    color: #e6e6e6;
+    padding: 80px 8% 30px;
+    background: var(--gradient-footer);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Warm texture overlay */
+.footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(45deg, 
+            transparent, 
+            transparent 10px, 
+            rgba(255, 248, 231, 0.02) 10px, 
+            rgba(255, 248, 231, 0.02) 20px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Energetic carnival top divider */
+.footer::after {
+    content: "";
+    position: absolute;
+    top: -3px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--accent-orange) 10%,
+        var(--accent-gold) 25%,
+        var(--accent-red) 50%,
+        var(--accent-gold) 75%,
+        var(--accent-orange) 90%,
+        transparent 100%);
+    box-shadow: 
+        0 2px 15px rgba(255, 111, 0, 0.5),
+        0 -2px 20px rgba(255, 160, 0, 0.3);
 }
 
 .footer * {
-    background: transparent;
-}
-
-.footer .footer-socials a {
-    background: rgba(255, 255, 255, 0.08);
-}
-
-.footer .footer-socials a:hover {
-    background: var(--accent-red);
-}
-
-/* remove old decorative divider */
-.footer::before {
-    display: none;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 40px;
+    gap: 50px;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -677,7 +1083,6 @@ p {
 .footer-col {
     flex: 1;
     min-width: 240px;
-    background: transparent;
 }
 
 /* BRAND */
@@ -686,39 +1091,44 @@ p {
     display: flex;
     align-items: center;
     gap: 18px;
-    background: transparent;
 }
 
 .footer-logo {
-    width: 80px;
+    width: 70px;
     height: auto;
     display: block;
+    filter: brightness(1.2) drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
 .footer-title {
+    font-family: var(--font-heading);
     font-size: 22px;
     font-weight: 600;
-    color: #ffffff;
-    letter-spacing: 0.5px;
+    color: var(--cream-light);
+    letter-spacing: 1px;
     margin: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .footer-tagline {
-    margin-top: 12px;
-    font-size: 14px;
-    color: #bdbdbd;
-    background: transparent;
+    margin-top: 16px;
+    font-size: 15px;
+    color: var(--cream-medium);
+    font-style: italic;
+    line-height: 1.6;
 }
 
 /* HEADINGS */
 
 .footer-col h3 {
-    font-size: 15px;
-    margin-bottom: 14px;
-    color: #ffffff;
-    font-weight: 500;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: var(--cream-light);
+    font-weight: 600;
     margin-top: 0;
-    background: transparent;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* LINKS */
@@ -730,100 +1140,94 @@ p {
 }
 
 .footer-links li {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .footer-links a {
     text-decoration: none;
-    color: #cfcfcf;
-    transition: 0.25s ease;
-    background: transparent;
+    color: var(--cream-medium);
+    transition: var(--transition-smooth);
+    font-size: 14px;
+    display: inline-block;
 }
 
 .footer-links a:hover {
-    color: #ffffff;
+    color: var(--white-warm);
+    padding-left: 8px;
 }
 
 /* VENUE */
 
 .footer-venue {
     font-size: 14px;
-    line-height: 1.6;
-    color: #cfcfcf;
-    background: transparent;
+    line-height: 1.8;
+    color: var(--cream-medium);
 }
 
 /* SOCIAL */
 
 .footer-socials {
-    margin-top: 15px;
+    margin-top: 20px;
     display: flex;
-    gap: 12px;
-    background: transparent;
+    gap: 14px;
 }
 
 .footer-socials a {
-    width: 38px;
-    height: 38px;
+    width: 44px;
+    height: 44px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 248, 231, 0.12);
+    backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: 0.25s ease;
+    transition: var(--transition-smooth);
+    border: 1px solid rgba(255, 248, 231, 0.15);
 }
 
 .footer-socials a:hover {
-    background: var(--accent-red);
+    background: linear-gradient(135deg, var(--accent-red) 0%, #C62828 100%);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.4);
+    border-color: transparent;
 }
 
 .footer-socials i {
-    color: #ffffff;
-    font-size: 16px;
-    transition: 0.25s ease;
+    color: var(--cream-light);
+    font-size: 18px;
+    transition: var(--transition-smooth);
 }
 
-/* LINK HOVER EFFECT */
-
-.footer-links a {
-    position: relative;
+.footer-socials a:hover i {
+    color: var(--white-warm);
 }
 
+/* LINK HOVER EFFECT - Remove old red underline */
 .footer-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0%;
-    height: 2px;
-    background: var(--accent-red);
-    transition: 0.25s ease;
-}
-
-.footer-links a:hover::after {
-    width: 100%;
+    display: none;
 }
 
 /* BOTTOM */
 
 .footer-bottom {
-    margin-top: 40px;
-    padding-top: 20px;
+    margin-top: 60px;
+    padding-top: 30px;
     text-align: center;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(255, 248, 231, 0.15);
     font-size: 13px;
-    color: #9e9e9e;
-    background: transparent;
+    color: var(--cream-medium);
 }
 
 .footer-bottom p {
-    margin: 0 0 5px 0;
-    background: transparent;
+    margin: 0 0 8px 0;
+    font-weight: 400;
 }
 
 .footer-bottom span {
     display: block;
-    background: transparent;
+    font-size: 12px;
+    color: rgba(255, 248, 231, 0.7);
+    font-style: italic;
 }
 /* ===============================
    GLOBAL RESPONSIVE FIXES
@@ -831,6 +1235,11 @@ p {
 
 html, body {
     overflow-x: hidden;
+}
+
+#mainContent {
+    margin: 0;
+    padding: 0;
 }
 
 /* ===============================
@@ -874,7 +1283,7 @@ html, body {
 ================================= */
 
 .footer {
-    padding: 50px 6% 25px;
+    padding: 70px 6% 30px;
     width: 100%;
 }
 
@@ -884,7 +1293,7 @@ html, body {
 
 @media (max-width: 1024px) {
     .footer-container {
-        gap: 30px;
+        gap: 40px;
     }
 }
 
@@ -893,13 +1302,13 @@ html, body {
     /* NAVBAR */
     .navbar {
         width: 92%;
-        padding: 12px 20px;
-        border-radius: 20px;
-        top: 15px;
+        padding: 14px 22px;
+        border-radius: 24px;
+        top: 18px;
     }
 
     .logo {
-        font-size: 14px;
+        font-size: 13px;
     }
 
     /* HERO */
@@ -911,10 +1320,15 @@ html, body {
     }
 
     /* FOOTER STACK */
+    .footer {
+        padding: 60px 6% 25px;
+    }
+
     .footer-container {
         flex-direction: column;
         text-align: center;
         align-items: center;
+        gap: 35px;
     }
 
     .footer-col {
@@ -933,14 +1347,14 @@ html, body {
     }
 
     .footer-bottom {
-        margin-top: 30px;
+        margin-top: 40px;
     }
 }
 
 @media (max-width: 480px) {
 
     .navbar {
-        padding: 10px 15px;
+        padding: 12px 18px;
     }
 
     .hero h1 {
@@ -957,7 +1371,238 @@ html, body {
     }
 
     .footer {
-        padding: 40px 20px 20px;
+        padding: 50px 5% 20px;
         width: 100%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        padding: 0 20px;
+    }
+
+    .gallery-frame {
+        height: 250px;
+    }
+}
+
+/* =========================
+   EVENT GALLERY SECTION - Enhanced Gradient
+========================= */
+
+.gallery-section {
+    background: url('../assets/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 8%;
+    position: relative;
+    overflow: hidden;
+    border-top: 2px solid rgba(255, 183, 77, 0.5);
+}
+
+/* Vibrant warm gradient overlay - STRONGER CONTRAST */
+.gallery-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-gallery);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Subtle mesh texture overlay */
+.gallery-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(139, 111, 61, 0.02) 3px, rgba(139, 111, 61, 0.02) 6px),
+        repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(139, 111, 61, 0.02) 3px, rgba(139, 111, 61, 0.02) 6px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+}
+
+.gallery-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-heading {
+    font-family: var(--font-heading);
+    font-size: clamp(42px, 7vw, 72px);
+    font-weight: 800;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 80px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 12px rgba(139, 111, 61, 0.2);
+    position: relative;
+}
+
+/* Decorative carnival underline */
+.gallery-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 6px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        var(--accent-orange) 15%,
+        var(--accent-gold) 50%,
+        var(--accent-orange) 85%,
+        transparent 100%);
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(255, 160, 0, 0.4);
+}
+
+.gallery-accent {
+    color: var(--accent-red);
+    position: relative;
+    text-shadow: 0 0 20px rgba(255, 111, 0, 0.3);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    padding: 0 20px;
+}
+
+/* Energetic Gallery Card Frames */
+.gallery-frame {
+    position: relative;
+    height: 320px;
+    background: linear-gradient(135deg, rgba(255, 248, 231, 0.85) 0%, rgba(245, 230, 211, 0.75) 100%);
+    border: 1.5px solid rgba(139, 111, 61, 0.2);
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    cursor: pointer;
+    transition: var(--transition-bounce);
+}
+
+/* Elegant corner accents */
+.gallery-frame::before,
+.gallery-frame::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border: 2px solid rgba(139, 111, 61, 0.3);
+    z-index: 3;
+    transition: var(--transition-spring);
+}
+
+.gallery-frame::before {
+    top: 12px;
+    left: 12px;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 4px 0 0 0;
+}
+
+.gallery-frame::after {
+    bottom: 12px;
+    right: 12px;
+    border-left: none;
+    border-top: none;
+    border-radius: 0 0 4px 0;
+}
+
+.gallery-frame:hover {
+    transform: translateY(-16px) scale(1.06) rotate(1deg);
+    box-shadow: 
+        var(--shadow-xl),
+        0 0 40px rgba(255, 111, 0, 0.25),
+        0 20px 60px rgba(139, 111, 61, 0.3);
+    border-color: rgba(255, 111, 0, 0.4);
+    background: linear-gradient(135deg, rgba(255, 248, 231, 0.95) 0%, rgba(255, 224, 178, 0.90) 100%);
+}
+
+.gallery-frame:hover::before,
+.gallery-frame:hover::after {
+    width: 45px;
+    height: 45px;
+    border-width: 3px;
+    border-color: var(--accent-orange);
+}
+
+.gallery-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.05) brightness(0.98);
+    transition: var(--transition-smooth);
+}
+
+.gallery-frame:hover img {
+    filter: contrast(1.15) brightness(1.05) saturate(1.1);
+    transform: scale(1.12);
+}
+
+/* Energetic gradient overlay effect */
+.frame-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(255, 111, 0, 0) 0%, 
+        rgba(255, 160, 0, 0.05) 50%,
+        rgba(255, 111, 0, 0.1) 100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    z-index: 2;
+    border: 1px solid rgba(255, 111, 0, 0);
+    margin: 8px;
+    border-radius: 8px;
+}
+
+.gallery-frame:hover .frame-overlay {
+    opacity: 1;
+    background: linear-gradient(135deg, 
+        rgba(255, 111, 0, 0.08) 0%, 
+        rgba(255, 160, 0, 0.12) 50%,
+        rgba(255, 111, 0, 0.15) 100%);
+    border-color: rgba(255, 160, 0, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .gallery-section {
+        padding: 60px 5%;
+    }
+
+    .gallery-heading {
+        margin-bottom: 50px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .gallery-frame {
+        height: 280px;
+    }
+
+    .gallery-frame:hover {
+        transform: translateY(-8px) scale(1.02);
     }
 }
