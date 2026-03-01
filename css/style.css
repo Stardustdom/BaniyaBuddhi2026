@@ -70,13 +70,10 @@ p {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100%;
     height: 100vh;
-
-    object-fit: cover;          /* fills width */
-    object-position: center;    /* crop evenly */
-
+    object-fit: contain;   /* KEY CHANGE */
+    background: black;     /* fills empty space */
     z-index: 9999;
 }
 
