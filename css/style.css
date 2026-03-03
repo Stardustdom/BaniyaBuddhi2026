@@ -173,7 +173,11 @@ body {
     letter-spacing: 0.3px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #ffffff;
+    background:
+        url("data:image/svg+xml,%3Csvg width='350' height='350' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.35'%3E%3C!-- Graph Chart --%3E%3Cg transform='translate(40,40) rotate(5)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='0,20 6,14 12,18 18,8 24,12 30,4'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='26' x2='30' y2='26'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='0' y1='0' x2='0' y2='26'/%3E%3C/g%3E%3C!-- Dollar Sign --%3E%3Cg transform='translate(130,35) rotate(-8)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M18,6 Q24,6 24,12 Q24,18 18,18 L12,18 Q6,18 6,24 Q6,30 12,30 L18,30'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='0' x2='15' y2='36'/%3E%3C/g%3E%3C!-- Lightbulb --%3E%3Cg transform='translate(230,40) rotate(3)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='12' r='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,22 L10,26 L20,26 L20,22'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='15' y1='2' x2='15' y2='0'/%3E%3C/g%3E%3C!-- Rocket --%3E%3Cg transform='translate(300,45) rotate(-5)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M15,2 L15,22 M15,2 L10,10 L15,7 L20,10 Z'/%3E%3Cellipse fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='25' rx='8' ry='4'/%3E%3C/g%3E%3C!-- Gear --%3E%3Cg transform='translate(80,140) rotate(10)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='5'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M15,0 L15,6 M15,24 L15,30 M0,15 L6,15 M24,15 L30,15'/%3E%3C/g%3E%3C!-- Coffee Cup --%3E%3Cg transform='translate(180,135) rotate(-6)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M6,10 L6,24 Q6,28 10,28 L20,28 Q24,28 24,24 L24,10 Z'/%3E%3Cline fill='none' stroke='%238B6F3D' stroke-width='1.2' x1='5' y1='10' x2='25' y2='10'/%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' d='M10,4 Q12,6 10,8 M15,4 Q17,6 15,8 M20,4 Q22,6 20,8'/%3E%3C/g%3E%3C!-- Handshake --%3E%3Cg transform='translate(270,140) rotate(4)'%3E%3Cpath fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' d='M2,18 L8,18 L13,13 L18,18 L24,18 M8,18 L8,12 L2,12 M24,18 L24,12 L30,12'/%3E%3C/g%3E%3C!-- Bar Chart --%3E%3Cg transform='translate(40,240) rotate(-7)'%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='2' y='18' width='5' height='12'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='10' y='12' width='5' height='18'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='18' y='6' width='5' height='24'/%3E%3Crect fill='none' stroke='%238B6F3D' stroke-width='1.2' x='26' y='14' width='5' height='16'/%3E%3C/g%3E%3C!-- Target --%3E%3Cg transform='translate(140,245) rotate(8)'%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='12'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='7'/%3E%3Ccircle fill='none' stroke='%238B6F3D' stroke-width='1.2' cx='15' cy='15' r='2'/%3E%3C/g%3E%3C!-- Trending Arrow --%3E%3Cg transform='translate(240,240) rotate(6)'%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='2,22 10,14 15,19 28,6'/%3E%3Cpolyline fill='none' stroke='%238B6F3D' stroke-width='1.2' stroke-linecap='round' points='20,6 28,6 28,14'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat,
+        radial-gradient(circle at 15% 20%, rgba(255, 183, 77, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(255, 138, 101, 0.12) 0%, transparent 50%),
+        linear-gradient(160deg, #FFE8CC 0%, #F5D9B5 25%, #E8C89F 75%, #D4B883 100%);
     position: relative;
 }
 
@@ -443,6 +447,151 @@ p {
         0 0 35px rgba(255, 111, 0, 0.4);
     transform: translateY(-3px) scale(1.05);
     animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* =========================
+   MOBILE REGISTER CTA BAR
+   Premium nameplate-style CTA
+========================= */
+
+.mobile-register-bar {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-register-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 96%;
+        margin: 30px auto;
+        padding: 24px 0;
+        border-radius: 24px;
+        background:
+            url("data:image/svg+xml,%3Csvg width='350' height='350' xmlns='http://www.w3.org/2000/svg'%3E%3Cg opacity='0.25'%3E%3C!-- Graph Chart --%3E%3Cg transform='translate(40,40) rotate(5)'%3E%3Cpolyline fill='none' stroke='%23FFF8E7' stroke-width='1.5' stroke-linecap='round' points='0,20 6,14 12,18 18,8 24,12 30,4'/%3E%3Cline fill='none' stroke='%23FFF8E7' stroke-width='1.5' x1='0' y1='26' x2='30' y2='26'/%3E%3Cline fill='none' stroke='%23FFF8E7' stroke-width='1.5' x1='0' y1='0' x2='0' y2='26'/%3E%3C/g%3E%3C!-- Dollar Sign --%3E%3Cg transform='translate(130,35) rotate(-8)'%3E%3Cpath fill='none' stroke='%23FFF8E7' stroke-width='1.5' stroke-linecap='round' d='M18,6 Q24,6 24,12 Q24,18 18,18 L12,18 Q6,18 6,24 Q6,30 12,30 L18,30'/%3E%3Cline fill='none' stroke='%23FFF8E7' stroke-width='1.5' x1='15' y1='0' x2='15' y2='36'/%3E%3C/g%3E%3C!-- Lightbulb --%3E%3Cg transform='translate(230,40) rotate(3)'%3E%3Ccircle fill='none' stroke='%23FFF8E7' stroke-width='1.5' cx='15' cy='12' r='10'/%3E%3Cpath fill='none' stroke='%23FFF8E7' stroke-width='1.5' d='M10,22 L10,26 L20,26 L20,22'/%3E%3Cline fill='none' stroke='%23FFF8E7' stroke-width='1.5' x1='15' y1='2' x2='15' y2='0'/%3E%3C/g%3E%3C!-- Rocket --%3E%3Cg transform='translate(300,45) rotate(-5)'%3E%3Cpath fill='none' stroke='%23FFF8E7' stroke-width='1.5' stroke-linecap='round' d='M15,2 L15,22 M15,2 L10,10 L15,7 L20,10 Z'/%3E%3Cellipse fill='none' stroke='%23FFF8E7' stroke-width='1.5' cx='15' cy='25' rx='8' ry='4'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") repeat,
+            linear-gradient(135deg, rgba(139, 111, 61, 0.9), rgba(107, 85, 48, 0.95));
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        box-shadow: 
+            0 8px 32px rgba(74, 60, 40, 0.3),
+            inset 0 1px 0 rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 183, 77, 0.2);
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .mobile-register-bar::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, 
+            transparent 0%, 
+            rgba(255, 111, 0, 0.6) 50%, 
+            transparent 100%);
+        border-radius: 24px 24px 0 0;
+        z-index: 2;
+    }
+    
+    .mobile-register-bar::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(255, 248, 231, 0.03) 3px, rgba(255, 248, 231, 0.03) 6px),
+            repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(255, 248, 231, 0.03) 3px, rgba(255, 248, 231, 0.03) 6px);
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.4;
+        border-radius: 24px;
+    }
+    
+    .register-accent {
+        font-size: 32px;
+        color: rgba(255, 183, 77, 0.8);
+        font-weight: bold;
+        z-index: 10;
+        animation: pulse-arrow 1.5s ease-in-out infinite;
+        text-shadow: 
+            0 0 10px rgba(255, 111, 0, 0.6),
+            0 0 20px rgba(255, 111, 0, 0.4);
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+    
+    .register-accent-left {
+        margin-right: 15px;
+    }
+    
+    .register-accent-right {
+        margin-left: 15px;
+    }
+    
+    @keyframes pulse-arrow {
+        0%, 100% { 
+            transform: scale(1);
+            opacity: 0.8;
+        }
+        50% { 
+            transform: scale(1.2);
+            opacity: 1;
+        }
+    }
+    
+    .mobile-register-btn {
+        padding: 14px 40px;
+        border-radius: 999px;
+        background: var(--gradient-cta);
+        color: var(--white-warm) !important;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-family: var(--font-heading);
+        transition: var(--transition-smooth);
+        box-shadow: 
+            0 4px 20px rgba(211, 47, 47, 0.5),
+            0 0 25px rgba(255, 111, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        position: relative;
+        overflow: hidden;
+        text-decoration: none;
+        display: inline-block;
+        z-index: 10;
+    }
+    
+    .mobile-register-btn::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.3) 50%,
+            transparent 70%
+        );
+        animation: shimmer 3s infinite;
+    }
+    
+    .mobile-register-btn:hover {
+        background: var(--gradient-cta-hover);
+        box-shadow: 
+            0 6px 28px rgba(211, 47, 47, 0.6),
+            0 0 40px rgba(255, 111, 0, 0.5);
+        transform: scale(1.05);
+        animation: pulse-glow 2s ease-in-out infinite;
+    }
+    
+    .mobile-register-btn:active {
+        transform: scale(0.98);
+    }
 }
 
 
